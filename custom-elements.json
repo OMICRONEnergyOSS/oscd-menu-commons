@@ -1,0 +1,244 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "oscd-menu-new.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "OscdMenuNewFile",
+          "members": [
+            {
+              "kind": "field",
+              "name": "scopedElements",
+              "type": {
+                "text": "object"
+              },
+              "static": true,
+              "default": "{ 'oscd-dialog': OscdDialog, 'oscd-icon': OscdIcon, 'oscd-radio': OscdRadio, 'oscd-filled-button': OscdFilledButton, 'oscd-text-button': OscdTextButton, 'oscd-outlined-textfield': OscdOutlinedTextField, }"
+            },
+            {
+              "kind": "field",
+              "name": "isFormValid",
+              "type": {
+                "text": "boolean | undefined"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "dialog",
+              "type": {
+                "text": "HTMLElement & { show: () => void; close: () => void }"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "newProjectName",
+              "type": {
+                "text": "HTMLInputElement"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "selectedVersion",
+              "type": {
+                "text": "OscdRadio | undefined"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "createNewProject"
+            },
+            {
+              "kind": "method",
+              "name": "run"
+            }
+          ],
+          "mixins": [
+            {
+              "name": "ScopedElementsMixin",
+              "package": "@open-wc/scoped-elements/lit-element.js"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "OscdMenuNewFile",
+            "module": "oscd-menu-new.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "oscd-menu-redo.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "OscdMenuNewFile",
+          "members": [
+            {
+              "kind": "field",
+              "name": "scopedElements",
+              "type": {
+                "text": "object"
+              },
+              "static": true,
+              "default": "{ 'oscd-icon': OscdIcon, 'oscd-icon-button': OscdIconButton, }"
+            },
+            {
+              "kind": "field",
+              "name": "editor",
+              "type": {
+                "text": "Transactor<EditV2>"
+              },
+              "attribute": "editor"
+            },
+            {
+              "kind": "field",
+              "name": "canRedo",
+              "type": {
+                "text": "boolean"
+              },
+              "readonly": true
+            },
+            {
+              "kind": "method",
+              "name": "run"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "editor",
+              "type": {
+                "text": "Transactor<EditV2>"
+              },
+              "fieldName": "editor"
+            }
+          ],
+          "mixins": [
+            {
+              "name": "ScopedElementsMixin",
+              "package": "@open-wc/scoped-elements/lit-element.js"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "OscdMenuNewFile",
+            "module": "oscd-menu-redo.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "oscd-menu-undo.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "OscdMenuNewFile",
+          "members": [
+            {
+              "kind": "field",
+              "name": "scopedElements",
+              "type": {
+                "text": "object"
+              },
+              "static": true,
+              "default": "{ 'oscd-icon': OscdIcon, 'oscd-icon-button': OscdIconButton, }"
+            },
+            {
+              "kind": "field",
+              "name": "editor",
+              "type": {
+                "text": "Transactor<EditV2>"
+              },
+              "attribute": "editor"
+            },
+            {
+              "kind": "field",
+              "name": "docVersion",
+              "type": {
+                "text": "unknown"
+              },
+              "attribute": "docVersion"
+            },
+            {
+              "kind": "field",
+              "name": "canUndo",
+              "type": {
+                "text": "boolean"
+              },
+              "readonly": true
+            },
+            {
+              "kind": "method",
+              "name": "run"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "editor",
+              "type": {
+                "text": "Transactor<EditV2>"
+              },
+              "fieldName": "editor"
+            },
+            {
+              "name": "docVersion",
+              "type": {
+                "text": "unknown"
+              },
+              "fieldName": "docVersion"
+            }
+          ],
+          "mixins": [
+            {
+              "name": "ScopedElementsMixin",
+              "package": "@open-wc/scoped-elements/lit-element.js"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "OscdMenuNewFile",
+            "module": "oscd-menu-undo.ts"
+          }
+        }
+      ]
+    }
+  ]
+}
