@@ -24,7 +24,14 @@ export default [
     'plugin:@typescript-eslint/recommended',
   ),
   {
-    ignores: ['dist/', 'node_modules', 'coverage', 'doc'],
+    ignores: [
+      'dist/',
+      'node_modules',
+      'coverage',
+      'doc',
+      'src/locales.ts',
+      'src/locales/*',
+    ],
   },
 
   {
@@ -71,8 +78,7 @@ export default [
           devDependencies: [
             '**/*.test.ts',
             '**/*.spec.ts',
-            'eslint.config.js',
-            'rollup.config.js',
+            '*.config.js',
             'web-test-runner.config.js',
             'web-dev-server.*',
           ],

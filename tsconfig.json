@@ -13,9 +13,13 @@
     "outDir": "dist",
     "sourceMap": true,
     "inlineSources": true,
-    "rootDir": "./",
+    "rootDir": "src",
     "declaration": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "paths": {
+      "lit": ["./node_modules/lit"],
+      "lit/*": ["./node_modules/lit/*"]
+    }
   },
   "include": ["**/*.ts"]
 }

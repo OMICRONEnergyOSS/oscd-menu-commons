@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+<file target-language="de" source-language="en" original="lit-localize-inputs" datatype="plaintext">
+<body>
+<trans-unit id="s690714fde574c188">
+  <source>Filename</source>
+  <target>Dateiname</target>
+</trans-unit>
+<trans-unit id="s1b528387ae29637a">
+  <source>Extension</source>
+  <target>Dateiendung</target>
+</trans-unit>
+<trans-unit id="s2ceb11be2290bb1b">
+  <source>Cancel</source>
+  <target>Abbrechen</target>
+</trans-unit>
+<trans-unit id="s60320a18282b2b33">
+  <source>Rename</source>
+  <target>Umbenennen</target>
+</trans-unit>
+</body>
+</file>
+</xliff>

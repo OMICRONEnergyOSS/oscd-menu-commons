@@ -4,7 +4,290 @@
   "modules": [
     {
       "kind": "javascript-module",
-      "path": "oscd-menu-new.ts",
+      "path": "src/locales.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "sourceLocale",
+          "default": "`en`",
+          "description": "The locale code that templates in this source code are written in."
+        },
+        {
+          "kind": "variable",
+          "name": "targetLocales",
+          "type": {
+            "text": "[\n  `de`,\n]"
+          },
+          "default": "[ `de`, ]",
+          "description": "The other locale codes that this application is localized into. Sorted\nlexicographically."
+        },
+        {
+          "kind": "variable",
+          "name": "allLocales",
+          "type": {
+            "text": "[\n  `de`,\n  `en`,\n]"
+          },
+          "default": "[ `de`, `en`, ]",
+          "description": "All valid project locale codes. Sorted lexicographically."
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "sourceLocale",
+          "declaration": {
+            "name": "sourceLocale",
+            "module": "src/locales.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "targetLocales",
+          "declaration": {
+            "name": "targetLocales",
+            "module": "src/locales.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "allLocales",
+          "declaration": {
+            "name": "allLocales",
+            "module": "src/locales.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/oscd-menu-commons.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "OscdMenuNew",
+          "declaration": {
+            "name": "OscdMenuNew",
+            "module": "src/oscd-menu-commons.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "OscdMenuUndo",
+          "declaration": {
+            "name": "OscdMenuUndo",
+            "module": "src/oscd-menu-commons.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "OscdMenuRedo",
+          "declaration": {
+            "name": "OscdMenuRedo",
+            "module": "src/oscd-menu-commons.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "OscdMenuFileClose",
+          "declaration": {
+            "name": "OscdMenuFileClose",
+            "module": "src/oscd-menu-commons.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "OscdMenuFileRename",
+          "declaration": {
+            "name": "OscdMenuFileRename",
+            "module": "src/oscd-menu-commons.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/oscd-menu-file-close.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "OscdMenuFileClose",
+          "members": [
+            {
+              "kind": "field",
+              "name": "scopedElements",
+              "type": {
+                "text": "object"
+              },
+              "static": true,
+              "default": "{}"
+            },
+            {
+              "kind": "field",
+              "name": "docName",
+              "type": {
+                "text": "string"
+              },
+              "attribute": "docName"
+            },
+            {
+              "kind": "method",
+              "name": "run"
+            }
+          ],
+          "events": [
+            {
+              "name": "oscd-close",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "docName",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "docName"
+            }
+          ],
+          "mixins": [
+            {
+              "name": "ScopedElementsMixin",
+              "package": "@open-wc/scoped-elements/lit-element.js"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "OscdMenuFileClose",
+            "module": "src/oscd-menu-file-close.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/oscd-menu-file-rename.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "OscdMenuFileRename",
+          "members": [
+            {
+              "kind": "field",
+              "name": "scopedElements",
+              "type": {
+                "text": "object"
+              },
+              "static": true,
+              "default": "{ 'oscd-dialog': OscdDialog, 'oscd-filled-select': OscdFilledSelect, 'oscd-select-option': OscdSelectOption, 'oscd-filled-text-field': OscdFilledTextField, 'oscd-icon': OscdIcon, 'oscd-text-button': OscdTextButton, 'oscd-filled-button': OscdFilledButton, }"
+            },
+            {
+              "kind": "field",
+              "name": "docName",
+              "type": {
+                "text": "string | undefined"
+              },
+              "attribute": "docName"
+            },
+            {
+              "kind": "field",
+              "name": "docVersion",
+              "type": {
+                "text": "unknown"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "docs",
+              "type": {
+                "text": "Record<string, XMLDocument>"
+              },
+              "default": "{}"
+            },
+            {
+              "kind": "field",
+              "name": "dialog",
+              "type": {
+                "text": "OscdDialog"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "fileNameField",
+              "type": {
+                "text": "HTMLInputElement"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "fileExtensionUI",
+              "type": {
+                "text": "HTMLInputElement"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "run"
+            }
+          ],
+          "events": [
+            {
+              "name": "oscd-rename",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "docName",
+              "type": {
+                "text": "string | undefined"
+              },
+              "fieldName": "docName"
+            }
+          ],
+          "mixins": [
+            {
+              "name": "ScopedElementsMixin",
+              "package": "@open-wc/scoped-elements/lit-element.js"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "OscdMenuFileRename",
+            "module": "src/oscd-menu-file-rename.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/oscd-menu-new.ts",
       "declarations": [
         {
           "kind": "class",
@@ -76,14 +359,14 @@
           "name": "default",
           "declaration": {
             "name": "OscdMenuNewFile",
-            "module": "oscd-menu-new.ts"
+            "module": "src/oscd-menu-new.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "oscd-menu-redo.ts",
+      "path": "src/oscd-menu-redo.ts",
       "declarations": [
         {
           "kind": "class",
@@ -148,14 +431,14 @@
           "name": "default",
           "declaration": {
             "name": "OscdMenuNewFile",
-            "module": "oscd-menu-redo.ts"
+            "module": "src/oscd-menu-redo.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "oscd-menu-undo.ts",
+      "path": "src/oscd-menu-undo.ts",
       "declarations": [
         {
           "kind": "class",
@@ -235,7 +518,31 @@
           "name": "default",
           "declaration": {
             "name": "OscdMenuNewFile",
-            "module": "oscd-menu-undo.ts"
+            "module": "src/oscd-menu-undo.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/locales/de.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "templates",
+          "type": {
+            "text": "object"
+          },
+          "default": "{ 's1b528387ae29637a': `Dateiendung`, 's2ceb11be2290bb1b': `Abbrechen`, 's60320a18282b2b33': `Umbenennen`, 's690714fde574c188': `Dateiname`, }"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "templates",
+          "declaration": {
+            "name": "templates",
+            "module": "src/locales/de.ts"
           }
         }
       ]

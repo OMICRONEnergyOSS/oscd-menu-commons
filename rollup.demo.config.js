@@ -12,36 +12,8 @@ const demoTsconfig = {
   exclude: ['**/*.test.ts', '**/*.spec.ts'],
 };
 
-// Main bundle configuration
-const mainConfig = {
-  input: [
-    'src/oscd-menu-file-close.ts',
-    'src/oscd-menu-file-rename.ts',
-    'src/oscd-menu-new.ts',
-    'src/oscd-menu-redo.ts',
-    'src/oscd-menu-undo.ts',
-  ],
-  output: {
-    sourcemap: true,
-    format: 'es',
-    dir: 'dist',
-  },
-  preserveEntrySignatures: 'strict',
-  plugins: [
-    nodeResolve({
-      preferBuiltins: false,
-      browser: true,
-    }),
-    typescript({
-      ...tsconfig,
-      exclude: ['**/*.test.ts', '**/*.spec.ts'],
-    }),
-    importMetaAssets(),
-  ],
-};
-
-// Demo bundle configuration - only runs after main bundle
-const demoConfig = {
+// Demo bundle configuration - expects main bundle to already exist
+export default {
   input: 'demo/index.html',
   plugins: [
     html({
@@ -69,9 +41,3 @@ const demoConfig = {
     sourcemap: true,
   },
 };
-
-// Export only main config by default, demo config can be run separately
-export default mainConfig;
-
-// Export both configs for sequential builds
-export { mainConfig, demoConfig };
