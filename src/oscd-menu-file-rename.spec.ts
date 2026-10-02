@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-expressions */
 import { expect, fixture, html } from '@open-wc/testing';
 import OscdMenuFileRename from './oscd-menu-file-rename.js';
 import { waitForDialogState } from '@omicronenergy/oscd-test-utils';
