@@ -1,77 +1,19 @@
-import nodeResolve from '@rollup/plugin-node-resolve';
-import typescript from '@rollup/plugin-typescript';
-import { rollupPluginHTML as html } from '@web/rollup-plugin-html';
-import { importMetaAssets } from '@web/rollup-plugin-import-meta-assets';
-import copy from 'rollup-plugin-copy';
-import fs from 'fs';
+import oscdTooling from '@omicronenergy/oscd-tooling/configs/rollup.config.js';
 
-const tsconfig = JSON.parse(fs.readFileSync('./tsconfig.json', 'utf8'));
-const demoTsconfig = {
-  ...tsconfig,
-  compilerOptions: { ...tsconfig.compilerOptions, outDir: 'dist/demo' },
-  exclude: ['**/*.test.ts', '**/*.spec.ts'],
-};
+const [mainConfig, demoConfig] = oscdTooling;
 
-// Main bundle configuration
-const mainConfig = {
-  input: [
-    'src/oscd-menu-file-close.ts',
-    'src/oscd-menu-file-rename.ts',
-    'src/oscd-menu-new.ts',
-    'src/oscd-menu-redo.ts',
-    'src/oscd-menu-undo.ts',
-  ],
-  output: {
-    sourcemap: true,
-    format: 'es',
-    dir: 'dist',
-  },
-  preserveEntrySignatures: 'strict',
-  plugins: [
-    nodeResolve({
-      preferBuiltins: false,
-      browser: true,
-    }),
-    typescript({
-      ...tsconfig,
-      exclude: ['**/*.test.ts', '**/*.spec.ts'],
-    }),
-    importMetaAssets(),
-  ],
-};
+// This package bundles one entry point per exported custom element, rather
+// than the single entry point the shared config assumes, so `input` is
+// overridden here; every other option (plugins, output, demo bundling) is
+// reused as-is from the shared config.
+const entries = [
+  'oscd-menu-file-close',
+  'oscd-menu-file-rename',
+  'oscd-menu-new',
+  'oscd-menu-open',
+  'oscd-menu-redo',
+  'oscd-menu-save',
+  'oscd-menu-undo',
+].map(name => `src/${name}.ts`);
 
-// Demo bundle configuration - only runs after main bundle
-const demoConfig = {
-  input: 'demo/index.html',
-  plugins: [
-    html({
-      input: 'demo/index.html',
-      minify: true,
-    }),
-    nodeResolve({
-      preferBuiltins: false,
-      browser: true,
-    }),
-    typescript(demoTsconfig),
-    importMetaAssets(),
-    copy({
-      targets: [
-        { src: 'demo/sample.scd', dest: 'dist/demo' },
-        { src: 'demo/*.js', dest: 'dist/demo' },
-      ],
-      verbose: true,
-      flatten: false,
-    }),
-  ],
-  output: {
-    dir: 'dist/demo',
-    format: 'es',
-    sourcemap: true,
-  },
-};
-
-// Export only main config by default, demo config can be run separately
-export default mainConfig;
-
-// Export both configs for sequential builds
-export { mainConfig, demoConfig };
+export default [{ ...mainConfig, input: entries }, demoConfig];

@@ -1,25 +1,10 @@
 {
+  "extends": "@omicronenergy/oscd-tooling/configs/base.tsconfig.json",
   "compilerOptions": {
-    "target": "es2021",
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-    "noEmitOnError": true,
-    "lib": ["es2021", "dom", "DOM.Iterable"],
-    "strict": true,
-    "esModuleInterop": false,
-    "allowSyntheticDefaultImports": true,
-    "experimentalDecorators": true,
-    "importHelpers": true,
     "outDir": "dist",
-    "sourceMap": true,
-    "inlineSources": true,
     "rootDir": "src",
-    "declaration": true,
-    "skipLibCheck": true,
-    "paths": {
-      "lit": ["./node_modules/lit"],
-      "lit/*": ["./node_modules/lit/*"]
-    }
+    "types": ["mocha", "wicg-file-system-access"],
+    "typeRoots": ["./node_modules/@types"]
   },
-  "include": ["**/*.ts"]
+  "include": ["src/**/*.ts"]
 }
