@@ -1,11 +1,11 @@
-import { _ as __decorate, n as n$1, i as i$1, a as i$2, x, E, S as ScopedElementsMixin, T, B } from './property-d5R0XF0B.js';
-import { e, E as EASING, m as mixinDelegatesAria, a as e$1, r, b as e$2, h as e$3, j as i$3, t, g as internals, d as mixinElementInternals, u as u$1, s as setupFormSubmitter, M as MdFocusRing, f as MdRipple } from './form-submitter-BnXEOv4K.js';
+import { _ as __decorate, n as n$1, i as i$1, a as i$2, b, A, S as ScopedElementsMixin, E, D } from './property-CoNymZGd.js';
+import { e, E as EASING, m as mixinDelegatesAria, a as e$1, r as r$1, b as e$2, n as e$3, o as i$3, t, k as internals, d as mixinFormAssociated, f as mixinElementInternals, u, g as getFormValue, p as mixinFormSubmitter, O as OscdFocusRing, h as OscdRipple } from './form-submitter-BZoLMdvC.js';
 
 /**
  * @license
  * Copyright 2021 Google LLC
  * SPDX-License-Identifier: BSD-3-Clause
- */function o$1(o){return (e$1,n)=>{const{slot:r,selector:s}=o??{},c="slot"+(r?`[name=${r}]`:":not([name])");return e(e$1,n,{get(){const t=this.renderRoot?.querySelector(c),e=t?.assignedElements(o)??[];return void 0===s?e:e.filter((t=>t.matches(s)))}})}}
+ */function o$1(o){return (e$1,n)=>{const{slot:r,selector:s}=o??{},c="slot"+(r?`[name=${r}]`:":not([name])");return e(e$1,n,{get(){const t=this.renderRoot?.querySelector(c),e=t?.assignedElements(o)??[];return void 0===s?e:e.filter(t=>t.matches(s))}})}}
 
 /**
  * @license
@@ -51,24 +51,24 @@ __decorate([
 const styles$8 = i$2 `:host{box-sizing:border-box;color:var(--md-divider-color, var(--md-sys-color-outline-variant, #cac4d0));display:flex;height:var(--md-divider-thickness, 1px);width:100%}:host([inset]),:host([inset-start]){padding-inline-start:16px}:host([inset]),:host([inset-end]){padding-inline-end:16px}:host::before{background:currentColor;content:"";height:100%;width:100%}@media(forced-colors: active){:host::before{background:CanvasText}}
 `;
 
-/**
- * @license
- * Copyright 2023 Google LLC
- * SPDX-License-Identifier: Apache-2.0
+/*
+ * GENERATED SOURCE FILE. DO NOT MODIFY.
+ * Modifications will be overwritten.
+ * To prevent this file from being overwritten, remove this comment entirely.
  */
 /**
+ * @tagname oscd-divider
  * @summary A divider is a thin line that groups content in lists and
  * containers.
  *
- * @description Dividers can reinforce tapability, such as when used to separate
  * list items or define tappable regions in an accordion.
  *
  * @final
  * @suppress {visibility}
  */
-class MdDivider extends Divider {
+class OscdDivider extends Divider {
 }
-MdDivider.styles = [styles$8];
+OscdDivider.styles = [styles$8];
 
 /**
  * @license
@@ -438,7 +438,7 @@ class Dialog extends dialogBaseClass {
         // The focus trap sentinels are only added after the dialog opens, since
         // dialog.showModal() will try to autofocus them, even with tabindex="-1".
         const showFocusTrap = this.open && !this.noFocusTrap;
-        const focusTrap = x `
+        const focusTrap = b `
       <div
         class="focus-trap"
         tabindex="0"
@@ -446,25 +446,25 @@ class Dialog extends dialogBaseClass {
         @focus=${this.handleFocusTrapFocus}></div>
     `;
         const { ariaLabel } = this;
-        return x `
+        return b `
       <div class="scrim"></div>
       <dialog
         class=${e$2(classes)}
-        aria-label=${ariaLabel || E}
-        aria-labelledby=${this.hasHeadline ? 'headline' : E}
-        role=${this.type === 'alert' ? 'alertdialog' : E}
+        aria-label=${ariaLabel || A}
+        aria-labelledby=${this.hasHeadline ? 'headline' : A}
+        role=${this.type === 'alert' ? 'alertdialog' : A}
         @cancel=${this.handleCancel}
         @click=${this.handleDialogClick}
         @close=${this.handleClose}
         @keydown=${this.handleKeydown}
-        .returnValue=${this.returnValue || E}>
-        ${showFocusTrap ? focusTrap : E}
+        .returnValue=${this.returnValue || A}>
+        ${showFocusTrap ? focusTrap : A}
         <div class="container" @click=${this.handleContentClick}>
           <div class="headline">
             <div class="icon" aria-hidden="true">
               <slot name="icon" @slotchange=${this.handleIconChange}></slot>
             </div>
-            <h2 id="headline" aria-hidden=${!this.hasHeadline || E}>
+            <h2 id="headline" aria-hidden=${!this.hasHeadline || A}>
               <slot
                 name="headline"
                 @slotchange=${this.handleHeadlineChange}></slot>
@@ -483,7 +483,7 @@ class Dialog extends dialogBaseClass {
             <slot name="actions" @slotchange=${this.handleActionsChange}></slot>
           </div>
         </div>
-        ${showFocusTrap ? focusTrap : E}
+        ${showFocusTrap ? focusTrap : A}
       </dialog>
     `;
     }
@@ -723,10 +723,10 @@ __decorate([
     e$1('.actions')
 ], Dialog.prototype, "actions", void 0);
 __decorate([
-    r()
+    r$1()
 ], Dialog.prototype, "isAtScrollTop", void 0);
 __decorate([
-    r()
+    r$1()
 ], Dialog.prototype, "isAtScrollBottom", void 0);
 __decorate([
     e$1('.scroller')
@@ -741,13 +741,13 @@ __decorate([
     e$1('.focus-trap')
 ], Dialog.prototype, "firstFocusTrap", void 0);
 __decorate([
-    r()
+    r$1()
 ], Dialog.prototype, "hasHeadline", void 0);
 __decorate([
-    r()
+    r$1()
 ], Dialog.prototype, "hasActions", void 0);
 __decorate([
-    r()
+    r$1()
 ], Dialog.prototype, "hasIcon", void 0);
 function isFocusable(element) {
     // Check if the element is a known built-in focusable element:
@@ -790,7 +790,7 @@ const styles$7 = i$2 `:host{border-start-start-radius:var(--md-dialog-container-
  */
 /**
  * @license
- * Copyright 2025 Omicron Energy GmbH
+ * Copyright 2026 OMICRON electronics GmbH
  * SPDX-License-Identifier: Apache-2.0
  */
 /**
@@ -823,7 +823,7 @@ const styles$7 = i$2 `:host{border-start-start-radius:var(--md-dialog-container-
 class OscdDialog extends ScopedElementsMixin(Dialog) {
 }
 OscdDialog.scopedElements = {
-    'md-divider': MdDivider,
+    'md-divider': OscdDivider,
 };
 OscdDialog.styles = [styles$7];
 
@@ -831,363 +831,7 @@ OscdDialog.styles = [styles$7];
  * @license
  * Copyright 2018 Google LLC
  * SPDX-License-Identifier: BSD-3-Clause
- */const n="important",i=" !"+n,o=e$3(class extends i$3{constructor(t$1){if(super(t$1),t$1.type!==t.ATTRIBUTE||"style"!==t$1.name||t$1.strings?.length>2)throw Error("The `styleMap` directive must be used in the `style` attribute and must be the only part in the attribute.")}render(t){return Object.keys(t).reduce(((e,r)=>{const s=t[r];return null==s?e:e+`${r=r.includes("-")?r:r.replace(/(?:^(webkit|moz|ms|o)|)(?=[A-Z])/g,"-$&").toLowerCase()}:${s};`}),"")}update(e,[r]){const{style:s}=e.element;if(void 0===this.ft)return this.ft=new Set(Object.keys(r)),this.render(r);for(const t of this.ft)null==r[t]&&(this.ft.delete(t),t.includes("-")?s.removeProperty(t):s[t]=null);for(const t in r){const e=r[t];if(null!=e){this.ft.add(t);const r="string"==typeof e&&e.endsWith(i);t.includes("-")||r?s.setProperty(t,r?e.slice(0,-11):e,r?n:""):s[t]=e;}}return T}});
-
-/**
- * @license
- * Copyright 2021 Google LLC
- * SPDX-License-Identifier: Apache-2.0
- */
-/**
- * A field component.
- */
-class Field extends i$1 {
-    constructor() {
-        super(...arguments);
-        this.disabled = false;
-        this.error = false;
-        this.focused = false;
-        this.label = '';
-        this.noAsterisk = false;
-        this.populated = false;
-        this.required = false;
-        this.resizable = false;
-        this.supportingText = '';
-        this.errorText = '';
-        this.count = -1;
-        this.max = -1;
-        /**
-         * Whether or not the field has leading content.
-         */
-        this.hasStart = false;
-        /**
-         * Whether or not the field has trailing content.
-         */
-        this.hasEnd = false;
-        this.isAnimating = false;
-        /**
-         * When set to true, the error text's `role="alert"` will be removed, then
-         * re-added after an animation frame. This will re-announce an error message
-         * to screen readers.
-         */
-        this.refreshErrorAlert = false;
-        this.disableTransitions = false;
-    }
-    get counterText() {
-        // Count and max are typed as number, but can be set to null when Lit removes
-        // their attributes. These getters coerce back to a number for calculations.
-        const countAsNumber = this.count ?? -1;
-        const maxAsNumber = this.max ?? -1;
-        // Counter does not show if count is negative, or max is negative or 0.
-        if (countAsNumber < 0 || maxAsNumber <= 0) {
-            return '';
-        }
-        return `${countAsNumber} / ${maxAsNumber}`;
-    }
-    get supportingOrErrorText() {
-        return this.error && this.errorText ? this.errorText : this.supportingText;
-    }
-    /**
-     * Re-announces the field's error supporting text to screen readers.
-     *
-     * Error text announces to screen readers anytime it is visible and changes.
-     * Use the method to re-announce the message when the text has not changed,
-     * but announcement is still needed (such as for `reportValidity()`).
-     */
-    reannounceError() {
-        this.refreshErrorAlert = true;
-    }
-    update(props) {
-        // Client-side property updates
-        const isDisabledChanging = props.has('disabled') && props.get('disabled') !== undefined;
-        if (isDisabledChanging) {
-            this.disableTransitions = true;
-        }
-        // When disabling, remove focus styles if focused.
-        if (this.disabled && this.focused) {
-            props.set('focused', true);
-            this.focused = false;
-        }
-        // Animate if focused or populated change.
-        this.animateLabelIfNeeded({
-            wasFocused: props.get('focused'),
-            wasPopulated: props.get('populated'),
-        });
-        super.update(props);
-    }
-    render() {
-        const floatingLabel = this.renderLabel(/*isFloating*/ true);
-        const restingLabel = this.renderLabel(/*isFloating*/ false);
-        const outline = this.renderOutline?.(floatingLabel);
-        const classes = {
-            'disabled': this.disabled,
-            'disable-transitions': this.disableTransitions,
-            'error': this.error && !this.disabled,
-            'focused': this.focused,
-            'with-start': this.hasStart,
-            'with-end': this.hasEnd,
-            'populated': this.populated,
-            'resizable': this.resizable,
-            'required': this.required,
-            'no-label': !this.label,
-        };
-        return x `
-      <div class="field ${e$2(classes)}">
-        <div class="container-overflow">
-          ${this.renderBackground?.()}
-          <slot name="container"></slot>
-          ${this.renderStateLayer?.()} ${this.renderIndicator?.()} ${outline}
-          <div class="container">
-            <div class="start">
-              <slot name="start"></slot>
-            </div>
-            <div class="middle">
-              <div class="label-wrapper">
-                ${restingLabel} ${outline ? E : floatingLabel}
-              </div>
-              <div class="content">
-                <slot></slot>
-              </div>
-            </div>
-            <div class="end">
-              <slot name="end"></slot>
-            </div>
-          </div>
-        </div>
-        ${this.renderSupportingText()}
-      </div>
-    `;
-    }
-    updated(changed) {
-        if (changed.has('supportingText') ||
-            changed.has('errorText') ||
-            changed.has('count') ||
-            changed.has('max')) {
-            this.updateSlottedAriaDescribedBy();
-        }
-        if (this.refreshErrorAlert) {
-            // The past render cycle removed the role="alert" from the error message.
-            // Re-add it after an animation frame to re-announce the error.
-            requestAnimationFrame(() => {
-                this.refreshErrorAlert = false;
-            });
-        }
-        if (this.disableTransitions) {
-            requestAnimationFrame(() => {
-                this.disableTransitions = false;
-            });
-        }
-    }
-    renderSupportingText() {
-        const { supportingOrErrorText, counterText } = this;
-        if (!supportingOrErrorText && !counterText) {
-            return E;
-        }
-        // Always render the supporting text span so that our `space-around`
-        // container puts the counter at the end.
-        const start = x `<span>${supportingOrErrorText}</span>`;
-        // Conditionally render counter so we don't render the extra `gap`.
-        // TODO(b/244473435): add aria-label and announcements
-        const end = counterText
-            ? x `<span class="counter">${counterText}</span>`
-            : E;
-        // Announce if there is an error and error text visible.
-        // If refreshErrorAlert is true, do not announce. This will remove the
-        // role="alert" attribute. Another render cycle will happen after an
-        // animation frame to re-add the role.
-        const shouldErrorAnnounce = this.error && this.errorText && !this.refreshErrorAlert;
-        const role = shouldErrorAnnounce ? 'alert' : E;
-        return x `
-      <div class="supporting-text" role=${role}>${start}${end}</div>
-      <slot
-        name="aria-describedby"
-        @slotchange=${this.updateSlottedAriaDescribedBy}></slot>
-    `;
-    }
-    updateSlottedAriaDescribedBy() {
-        for (const element of this.slottedAriaDescribedBy) {
-            B(x `${this.supportingOrErrorText} ${this.counterText}`, element);
-            element.setAttribute('hidden', '');
-        }
-    }
-    renderLabel(isFloating) {
-        if (!this.label) {
-            return E;
-        }
-        let visible;
-        if (isFloating) {
-            // Floating label is visible when focused/populated or when animating.
-            visible = this.focused || this.populated || this.isAnimating;
-        }
-        else {
-            // Resting label is visible when unfocused. It is never visible while
-            // animating.
-            visible = !this.focused && !this.populated && !this.isAnimating;
-        }
-        const classes = {
-            'hidden': !visible,
-            'floating': isFloating,
-            'resting': !isFloating,
-        };
-        // Add '*' if a label is present and the field is required
-        const labelText = `${this.label}${this.required && !this.noAsterisk ? '*' : ''}`;
-        return x `
-      <span class="label ${e$2(classes)}" aria-hidden=${!visible}
-        >${labelText}</span
-      >
-    `;
-    }
-    animateLabelIfNeeded({ wasFocused, wasPopulated, }) {
-        if (!this.label) {
-            return;
-        }
-        wasFocused ??= this.focused;
-        wasPopulated ??= this.populated;
-        const wasFloating = wasFocused || wasPopulated;
-        const shouldBeFloating = this.focused || this.populated;
-        if (wasFloating === shouldBeFloating) {
-            return;
-        }
-        this.isAnimating = true;
-        this.labelAnimation?.cancel();
-        // Only one label is visible at a time for clearer text rendering.
-        // The floating label is visible and used during animation. At the end of
-        // the animation, it will either remain visible (if floating) or hide and
-        // the resting label will be shown.
-        //
-        // We don't use forward filling because if the dimensions of the text field
-        // change (leading icon removed, density changes, etc), then the animation
-        // will be inaccurate.
-        //
-        // Re-calculating the animation each time will prevent any visual glitches
-        // from appearing.
-        // TODO(b/241113345): use animation tokens
-        this.labelAnimation = this.floatingLabelEl?.animate(this.getLabelKeyframes(), { duration: 150, easing: EASING.STANDARD });
-        this.labelAnimation?.addEventListener('finish', () => {
-            // At the end of the animation, update the visible label.
-            this.isAnimating = false;
-        });
-    }
-    getLabelKeyframes() {
-        const { floatingLabelEl, restingLabelEl } = this;
-        if (!floatingLabelEl || !restingLabelEl) {
-            return [];
-        }
-        const { x: floatingX, y: floatingY, height: floatingHeight, } = floatingLabelEl.getBoundingClientRect();
-        const { x: restingX, y: restingY, height: restingHeight, } = restingLabelEl.getBoundingClientRect();
-        const floatingScrollWidth = floatingLabelEl.scrollWidth;
-        const restingScrollWidth = restingLabelEl.scrollWidth;
-        // Scale by width ratio instead of font size since letter-spacing will scale
-        // incorrectly. Using the width we can better approximate the adjusted
-        // scale and compensate for tracking and overflow.
-        // (use scrollWidth instead of width to account for clipped labels)
-        const scale = restingScrollWidth / floatingScrollWidth;
-        const xDelta = restingX - floatingX;
-        // The line-height of the resting and floating label are different. When
-        // we move the floating label down to the resting label's position, it won't
-        // exactly match because of this. We need to adjust by half of what the
-        // final scaled floating label's height will be.
-        const yDelta = restingY -
-            floatingY +
-            Math.round((restingHeight - floatingHeight * scale) / 2);
-        // Create the two transforms: floating to resting (using the calculations
-        // above), and resting to floating (re-setting the transform to initial
-        // values).
-        const restTransform = `translateX(${xDelta}px) translateY(${yDelta}px) scale(${scale})`;
-        const floatTransform = `translateX(0) translateY(0) scale(1)`;
-        // Constrain the floating labels width to a scaled percentage of the
-        // resting label's width. This will prevent long clipped labels from
-        // overflowing the container.
-        const restingClientWidth = restingLabelEl.clientWidth;
-        const isRestingClipped = restingScrollWidth > restingClientWidth;
-        const width = isRestingClipped ? `${restingClientWidth / scale}px` : '';
-        if (this.focused || this.populated) {
-            return [
-                { transform: restTransform, width },
-                { transform: floatTransform, width },
-            ];
-        }
-        return [
-            { transform: floatTransform, width },
-            { transform: restTransform, width },
-        ];
-    }
-    getSurfacePositionClientRect() {
-        return this.containerEl.getBoundingClientRect();
-    }
-}
-__decorate([
-    n$1({ type: Boolean })
-], Field.prototype, "disabled", void 0);
-__decorate([
-    n$1({ type: Boolean })
-], Field.prototype, "error", void 0);
-__decorate([
-    n$1({ type: Boolean })
-], Field.prototype, "focused", void 0);
-__decorate([
-    n$1()
-], Field.prototype, "label", void 0);
-__decorate([
-    n$1({ type: Boolean, attribute: 'no-asterisk' })
-], Field.prototype, "noAsterisk", void 0);
-__decorate([
-    n$1({ type: Boolean })
-], Field.prototype, "populated", void 0);
-__decorate([
-    n$1({ type: Boolean })
-], Field.prototype, "required", void 0);
-__decorate([
-    n$1({ type: Boolean })
-], Field.prototype, "resizable", void 0);
-__decorate([
-    n$1({ attribute: 'supporting-text' })
-], Field.prototype, "supportingText", void 0);
-__decorate([
-    n$1({ attribute: 'error-text' })
-], Field.prototype, "errorText", void 0);
-__decorate([
-    n$1({ type: Number })
-], Field.prototype, "count", void 0);
-__decorate([
-    n$1({ type: Number })
-], Field.prototype, "max", void 0);
-__decorate([
-    n$1({ type: Boolean, attribute: 'has-start' })
-], Field.prototype, "hasStart", void 0);
-__decorate([
-    n$1({ type: Boolean, attribute: 'has-end' })
-], Field.prototype, "hasEnd", void 0);
-__decorate([
-    o$1({ slot: 'aria-describedby' })
-], Field.prototype, "slottedAriaDescribedBy", void 0);
-__decorate([
-    r()
-], Field.prototype, "isAnimating", void 0);
-__decorate([
-    r()
-], Field.prototype, "refreshErrorAlert", void 0);
-__decorate([
-    r()
-], Field.prototype, "disableTransitions", void 0);
-__decorate([
-    e$1('.label.floating')
-], Field.prototype, "floatingLabelEl", void 0);
-__decorate([
-    e$1('.label.resting')
-], Field.prototype, "restingLabelEl", void 0);
-__decorate([
-    e$1('.container')
-], Field.prototype, "containerEl", void 0);
-
-/**
- * @license
- * Copyright 2024 Google LLC
- * SPDX-License-Identifier: Apache-2.0
- */
-// Generated stylesheet for ./field/internal/shared-styles.css.
-const styles$6 = i$2 `:host{display:inline-flex;resize:both}.field{display:flex;flex:1;flex-direction:column;writing-mode:horizontal-tb;max-width:100%}.container-overflow{border-start-start-radius:var(--_container-shape-start-start);border-start-end-radius:var(--_container-shape-start-end);border-end-end-radius:var(--_container-shape-end-end);border-end-start-radius:var(--_container-shape-end-start);display:flex;height:100%;position:relative}.container{align-items:center;border-radius:inherit;display:flex;flex:1;max-height:100%;min-height:100%;min-width:min-content;position:relative}.field,.container-overflow{resize:inherit}.resizable:not(.disabled) .container{resize:inherit;overflow:hidden}.disabled{pointer-events:none}slot[name=container]{border-radius:inherit}slot[name=container]::slotted(*){border-radius:inherit;inset:0;pointer-events:none;position:absolute}@layer styles{.start,.middle,.end{display:flex;box-sizing:border-box;height:100%;position:relative}.start{color:var(--_leading-content-color)}.end{color:var(--_trailing-content-color)}.start,.end{align-items:center;justify-content:center}.with-start .start{margin-inline:var(--_with-leading-content-leading-space) var(--_content-space)}.with-end .end{margin-inline:var(--_content-space) var(--_with-trailing-content-trailing-space)}.middle{align-items:stretch;align-self:baseline;flex:1}.content{color:var(--_content-color);display:flex;flex:1;opacity:0;transition:opacity 83ms cubic-bezier(0.2, 0, 0, 1)}.no-label .content,.focused .content,.populated .content{opacity:1;transition-delay:67ms}:is(.disabled,.disable-transitions) .content{transition:none}.content ::slotted(*){all:unset;color:currentColor;font-family:var(--_content-font);font-size:var(--_content-size);line-height:var(--_content-line-height);font-weight:var(--_content-weight);width:100%;overflow-wrap:revert;white-space:revert}.content ::slotted(:not(textarea)){padding-top:var(--_top-space);padding-bottom:var(--_bottom-space)}.content ::slotted(textarea){margin-top:var(--_top-space);margin-bottom:var(--_bottom-space)}:hover .content{color:var(--_hover-content-color)}:hover .start{color:var(--_hover-leading-content-color)}:hover .end{color:var(--_hover-trailing-content-color)}.focused .content{color:var(--_focus-content-color)}.focused .start{color:var(--_focus-leading-content-color)}.focused .end{color:var(--_focus-trailing-content-color)}.disabled .content{color:var(--_disabled-content-color)}.disabled.no-label .content,.disabled.focused .content,.disabled.populated .content{opacity:var(--_disabled-content-opacity)}.disabled .start{color:var(--_disabled-leading-content-color);opacity:var(--_disabled-leading-content-opacity)}.disabled .end{color:var(--_disabled-trailing-content-color);opacity:var(--_disabled-trailing-content-opacity)}.error .content{color:var(--_error-content-color)}.error .start{color:var(--_error-leading-content-color)}.error .end{color:var(--_error-trailing-content-color)}.error:hover .content{color:var(--_error-hover-content-color)}.error:hover .start{color:var(--_error-hover-leading-content-color)}.error:hover .end{color:var(--_error-hover-trailing-content-color)}.error.focused .content{color:var(--_error-focus-content-color)}.error.focused .start{color:var(--_error-focus-leading-content-color)}.error.focused .end{color:var(--_error-focus-trailing-content-color)}}@layer hcm{@media(forced-colors: active){.disabled :is(.start,.content,.end){color:GrayText;opacity:1}}}@layer styles{.label{box-sizing:border-box;color:var(--_label-text-color);overflow:hidden;max-width:100%;text-overflow:ellipsis;white-space:nowrap;z-index:1;font-family:var(--_label-text-font);font-size:var(--_label-text-size);line-height:var(--_label-text-line-height);font-weight:var(--_label-text-weight);width:min-content}.label-wrapper{inset:0;pointer-events:none;position:absolute}.label.resting{position:absolute;top:var(--_top-space)}.label.floating{font-size:var(--_label-text-populated-size);line-height:var(--_label-text-populated-line-height);transform-origin:top left}.label.hidden{opacity:0}.no-label .label{display:none}.label-wrapper{inset:0;position:absolute;text-align:initial}:hover .label{color:var(--_hover-label-text-color)}.focused .label{color:var(--_focus-label-text-color)}.disabled .label{color:var(--_disabled-label-text-color)}.disabled .label:not(.hidden){opacity:var(--_disabled-label-text-opacity)}.error .label{color:var(--_error-label-text-color)}.error:hover .label{color:var(--_error-hover-label-text-color)}.error.focused .label{color:var(--_error-focus-label-text-color)}}@layer hcm{@media(forced-colors: active){.disabled .label:not(.hidden){color:GrayText;opacity:1}}}@layer styles{.supporting-text{color:var(--_supporting-text-color);display:flex;font-family:var(--_supporting-text-font);font-size:var(--_supporting-text-size);line-height:var(--_supporting-text-line-height);font-weight:var(--_supporting-text-weight);gap:16px;justify-content:space-between;padding-inline-start:var(--_supporting-text-leading-space);padding-inline-end:var(--_supporting-text-trailing-space);padding-top:var(--_supporting-text-top-space)}.supporting-text :nth-child(2){flex-shrink:0}:hover .supporting-text{color:var(--_hover-supporting-text-color)}.focus .supporting-text{color:var(--_focus-supporting-text-color)}.disabled .supporting-text{color:var(--_disabled-supporting-text-color);opacity:var(--_disabled-supporting-text-opacity)}.error .supporting-text{color:var(--_error-supporting-text-color)}.error:hover .supporting-text{color:var(--_error-hover-supporting-text-color)}.error.focus .supporting-text{color:var(--_error-focus-supporting-text-color)}}@layer hcm{@media(forced-colors: active){.disabled .supporting-text{color:GrayText;opacity:1}}}
-`;
+ */const n="important",i=" !"+n,o=e$3(class extends i$3{constructor(t$1){if(super(t$1),t$1.type!==t.ATTRIBUTE||"style"!==t$1.name||t$1.strings?.length>2)throw Error("The `styleMap` directive must be used in the `style` attribute and must be the only part in the attribute.")}render(t){return Object.keys(t).reduce((e,r)=>{const s=t[r];return null==s?e:e+`${r=r.includes("-")?r:r.replace(/(?:^(webkit|moz|ms|o)|)(?=[A-Z])/g,"-$&").toLowerCase()}:${s};`},"")}update(e,[r]){const{style:s}=e.element;if(void 0===this.ft)return this.ft=new Set(Object.keys(r)),this.render(r);for(const t of this.ft)null==r[t]&&(this.ft.delete(t),t.includes("-")?s.removeProperty(t):s[t]=null);for(const t in r){const e=r[t];if(null!=e){this.ft.add(t);const r="string"==typeof e&&e.endsWith(i);t.includes("-")||r?s.setProperty(t,r?e.slice(0,-11):e,r?n:""):s[t]=e;}}return E}});
 
 /**
  * @license
@@ -1313,178 +957,6 @@ function mixinConstraintValidation(base) {
         }
     }
     return ConstraintValidationElement;
-}
-
-/**
- * @license
- * Copyright 2023 Google LLC
- * SPDX-License-Identifier: Apache-2.0
- */
-/**
- * A symbol property to retrieve the form value for an element.
- */
-const getFormValue = Symbol('getFormValue');
-/**
- * A symbol property to retrieve the form state for an element.
- */
-const getFormState = Symbol('getFormState');
-/**
- * Mixes in form-associated behavior for a class. This allows an element to add
- * values to `<form>` elements.
- *
- * Implementing classes should provide a `[formValue]` to return the current
- * value of the element, as well as reset and restore callbacks.
- *
- * @example
- * ```ts
- * const base = mixinFormAssociated(mixinElementInternals(LitElement));
- *
- * class MyControl extends base {
- *   \@property()
- *   value = '';
- *
- *   override [getFormValue]() {
- *     return this.value;
- *   }
- *
- *   override formResetCallback() {
- *     const defaultValue = this.getAttribute('value');
- *     this.value = defaultValue;
- *   }
- *
- *   override formStateRestoreCallback(state: string) {
- *     this.value = state;
- *   }
- * }
- * ```
- *
- * Elements may optionally provide a `[formState]` if their values do not
- * represent the state of the component.
- *
- * @example
- * ```ts
- * const base = mixinFormAssociated(mixinElementInternals(LitElement));
- *
- * class MyCheckbox extends base {
- *   \@property()
- *   value = 'on';
- *
- *   \@property({type: Boolean})
- *   checked = false;
- *
- *   override [getFormValue]() {
- *     return this.checked ? this.value : null;
- *   }
- *
- *   override [getFormState]() {
- *     return String(this.checked);
- *   }
- *
- *   override formResetCallback() {
- *     const defaultValue = this.hasAttribute('checked');
- *     this.checked = defaultValue;
- *   }
- *
- *   override formStateRestoreCallback(state: string) {
- *     this.checked = Boolean(state);
- *   }
- * }
- * ```
- *
- * IMPORTANT: Requires declares for lit-analyzer
- * @example
- * ```ts
- * const base = mixinFormAssociated(mixinElementInternals(LitElement));
- * class MyControl extends base {
- *   // Writable mixin properties for lit-html binding, needed for lit-analyzer
- *   declare disabled: boolean;
- *   declare name: string;
- * }
- * ```
- *
- * @param base The class to mix functionality into. The base class must use
- *     `mixinElementInternals()`.
- * @return The provided class with `FormAssociated` mixed in.
- */
-function mixinFormAssociated(base) {
-    class FormAssociatedElement extends base {
-        get form() {
-            return this[internals].form;
-        }
-        get labels() {
-            return this[internals].labels;
-        }
-        // Use @property for the `name` and `disabled` properties to add them to the
-        // `observedAttributes` array and trigger `attributeChangedCallback()`.
-        //
-        // We don't use Lit's default getter/setter (`noAccessor: true`) because
-        // the attributes need to be updated synchronously to work with synchronous
-        // form APIs, and Lit updates attributes async by default.
-        get name() {
-            return this.getAttribute('name') ?? '';
-        }
-        set name(name) {
-            // Note: setting name to null or empty does not remove the attribute.
-            this.setAttribute('name', name);
-            // We don't need to call `requestUpdate()` since it's called synchronously
-            // in `attributeChangedCallback()`.
-        }
-        get disabled() {
-            return this.hasAttribute('disabled');
-        }
-        set disabled(disabled) {
-            this.toggleAttribute('disabled', disabled);
-            // We don't need to call `requestUpdate()` since it's called synchronously
-            // in `attributeChangedCallback()`.
-        }
-        attributeChangedCallback(name, old, value) {
-            // Manually `requestUpdate()` for `name` and `disabled` when their
-            // attribute or property changes.
-            // The properties update their attributes, so this callback is invoked
-            // immediately when the properties are set. We call `requestUpdate()` here
-            // instead of letting Lit set the properties from the attribute change.
-            // That would cause the properties to re-set the attribute and invoke this
-            // callback again in a loop. This leads to stale state when Lit tries to
-            // determine if a property changed or not.
-            if (name === 'name' || name === 'disabled') {
-                // Disabled's value is only false if the attribute is missing and null.
-                const oldValue = name === 'disabled' ? old !== null : old;
-                // Trigger a lit update when the attribute changes.
-                this.requestUpdate(name, oldValue);
-                return;
-            }
-            super.attributeChangedCallback(name, old, value);
-        }
-        requestUpdate(name, oldValue, options) {
-            super.requestUpdate(name, oldValue, options);
-            // If any properties change, update the form value, which may have changed
-            // as well.
-            // Update the form value synchronously in `requestUpdate()` rather than
-            // `update()` or `updated()`, which are async. This is necessary to ensure
-            // that form data is updated in time for synchronous event listeners.
-            this[internals].setFormValue(this[getFormValue](), this[getFormState]());
-        }
-        [getFormValue]() {
-            // Closure does not allow abstract symbol members, so a default
-            // implementation is needed.
-            throw new Error('Implement [getFormValue]');
-        }
-        [getFormState]() {
-            return this[getFormValue]();
-        }
-        formDisabledCallback(disabled) {
-            this.disabled = disabled;
-        }
-    }
-    /** @nocollapse */
-    FormAssociatedElement.formAssociated = true;
-    __decorate([
-        n$1({ noAccessor: true })
-    ], FormAssociatedElement.prototype, "name", null);
-    __decorate([
-        n$1({ type: Boolean, noAccessor: true })
-    ], FormAssociatedElement.prototype, "disabled", null);
-    return FormAssociatedElement;
 }
 
 /**
@@ -1846,15 +1318,429 @@ class Validator {
 
 /**
  * @license
- * Copyright 2020 Google LLC
- * SPDX-License-Identifier: BSD-3-Clause
- */const f=o=>void 0===o.strings,u={},m=(o,t=u)=>o._$AH=t;
+ * Copyright 2022 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+/**
+ * A component for elevation.
+ */
+class Elevation extends i$1 {
+    connectedCallback() {
+        super.connectedCallback();
+        // Needed for VoiceOver, which will create a "group" if the element is a
+        // sibling to other content.
+        this.setAttribute('aria-hidden', 'true');
+    }
+    render() {
+        return b `<span class="shadow"></span>`;
+    }
+}
+
+/**
+ * @license
+ * Copyright 2024 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+// Generated stylesheet for ./elevation/internal/elevation-styles.css.
+const styles$6 = i$2 `:host,.shadow,.shadow::before,.shadow::after{border-radius:inherit;inset:0;position:absolute;transition-duration:inherit;transition-property:inherit;transition-timing-function:inherit}:host{display:flex;pointer-events:none;transition-property:box-shadow,opacity}.shadow::before,.shadow::after{content:"";transition-property:box-shadow,opacity;--_level: var(--md-elevation-level, 0);--_shadow-color: var(--md-elevation-shadow-color, var(--md-sys-color-shadow, #000))}.shadow::before{box-shadow:0px calc(1px*(clamp(0,var(--_level),1) + clamp(0,var(--_level) - 3,1) + 2*clamp(0,var(--_level) - 4,1))) calc(1px*(2*clamp(0,var(--_level),1) + clamp(0,var(--_level) - 2,1) + clamp(0,var(--_level) - 4,1))) 0px var(--_shadow-color);opacity:.3}.shadow::after{box-shadow:0px calc(1px*(clamp(0,var(--_level),1) + clamp(0,var(--_level) - 1,1) + 2*clamp(0,var(--_level) - 2,3))) calc(1px*(3*clamp(0,var(--_level),2) + 2*clamp(0,var(--_level) - 2,3))) calc(1px*(clamp(0,var(--_level),4) + 2*clamp(0,var(--_level) - 4,1))) var(--_shadow-color);opacity:.15}
+`;
+
+/*
+ * GENERATED SOURCE FILE. DO NOT MODIFY.
+ * Modifications will be overwritten.
+ * To prevent this file from being overwritten, remove this comment entirely.
+ */
+/**
+ * @tagname oscd-elevation
+ * The `<oscd-elevation>` custom element with default styles.
+ *
+ * Elevation is the relative distance between two surfaces along the z-axis.
+ *
+ * @final
+ * @suppress {visibility}
+ */
+class OscdElevation extends Elevation {
+}
+OscdElevation.styles = [styles$6];
+
+/**
+ * @license
+ * Copyright 2021 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+/**
+ * A field component.
+ */
+class Field extends i$1 {
+    constructor() {
+        super(...arguments);
+        this.disabled = false;
+        this.error = false;
+        this.focused = false;
+        this.label = '';
+        this.noAsterisk = false;
+        this.populated = false;
+        this.required = false;
+        this.resizable = false;
+        this.supportingText = '';
+        this.errorText = '';
+        this.count = -1;
+        this.max = -1;
+        /**
+         * Whether or not the field has leading content.
+         */
+        this.hasStart = false;
+        /**
+         * Whether or not the field has trailing content.
+         */
+        this.hasEnd = false;
+        this.isAnimating = false;
+        /**
+         * When set to true, the error text's `role="alert"` will be removed, then
+         * re-added after an animation frame. This will re-announce an error message
+         * to screen readers.
+         */
+        this.refreshErrorAlert = false;
+        this.disableTransitions = false;
+    }
+    get counterText() {
+        // Count and max are typed as number, but can be set to null when Lit removes
+        // their attributes. These getters coerce back to a number for calculations.
+        const countAsNumber = this.count ?? -1;
+        const maxAsNumber = this.max ?? -1;
+        // Counter does not show if count is negative, or max is negative or 0.
+        if (countAsNumber < 0 || maxAsNumber <= 0) {
+            return '';
+        }
+        return `${countAsNumber} / ${maxAsNumber}`;
+    }
+    get supportingOrErrorText() {
+        return this.error && this.errorText ? this.errorText : this.supportingText;
+    }
+    /**
+     * Re-announces the field's error supporting text to screen readers.
+     *
+     * Error text announces to screen readers anytime it is visible and changes.
+     * Use the method to re-announce the message when the text has not changed,
+     * but announcement is still needed (such as for `reportValidity()`).
+     */
+    reannounceError() {
+        this.refreshErrorAlert = true;
+    }
+    update(props) {
+        // Client-side property updates
+        const isDisabledChanging = props.has('disabled') && props.get('disabled') !== undefined;
+        if (isDisabledChanging) {
+            this.disableTransitions = true;
+        }
+        // When disabling, remove focus styles if focused.
+        if (this.disabled && this.focused) {
+            props.set('focused', true);
+            this.focused = false;
+        }
+        // Animate if focused or populated change.
+        this.animateLabelIfNeeded({
+            wasFocused: props.get('focused'),
+            wasPopulated: props.get('populated'),
+        });
+        super.update(props);
+    }
+    render() {
+        const floatingLabel = this.renderLabel(/*isFloating*/ true);
+        const restingLabel = this.renderLabel(/*isFloating*/ false);
+        const outline = this.renderOutline?.(floatingLabel);
+        const classes = {
+            'disabled': this.disabled,
+            'disable-transitions': this.disableTransitions,
+            'error': this.error && !this.disabled,
+            'focused': this.focused,
+            'with-start': this.hasStart,
+            'with-end': this.hasEnd,
+            'populated': this.populated,
+            'resizable': this.resizable,
+            'required': this.required,
+            'no-label': !this.label,
+        };
+        return b `
+      <div class="field ${e$2(classes)}">
+        <div class="container-overflow">
+          ${this.renderBackground?.()}
+          <slot name="container"></slot>
+          ${this.renderStateLayer?.()} ${this.renderIndicator?.()} ${outline}
+          <div class="container">
+            <div class="start">
+              <slot name="start"></slot>
+            </div>
+            <div class="middle">
+              <div class="label-wrapper">
+                ${restingLabel} ${outline ? A : floatingLabel}
+              </div>
+              <div class="content">
+                <slot></slot>
+              </div>
+            </div>
+            <div class="end">
+              <slot name="end"></slot>
+            </div>
+          </div>
+        </div>
+        ${this.renderSupportingText()}
+      </div>
+    `;
+    }
+    updated(changed) {
+        if (changed.has('supportingText') ||
+            changed.has('errorText') ||
+            changed.has('count') ||
+            changed.has('max')) {
+            this.updateSlottedAriaDescribedBy();
+        }
+        if (this.refreshErrorAlert) {
+            // The past render cycle removed the role="alert" from the error message.
+            // Re-add it after an animation frame to re-announce the error.
+            requestAnimationFrame(() => {
+                this.refreshErrorAlert = false;
+            });
+        }
+        if (this.disableTransitions) {
+            requestAnimationFrame(() => {
+                this.disableTransitions = false;
+            });
+        }
+    }
+    renderSupportingText() {
+        const { supportingOrErrorText, counterText } = this;
+        if (!supportingOrErrorText && !counterText) {
+            return A;
+        }
+        // Always render the supporting text span so that our `space-around`
+        // container puts the counter at the end.
+        const start = b `<span>${supportingOrErrorText}</span>`;
+        // Conditionally render counter so we don't render the extra `gap`.
+        // TODO(b/244473435): add aria-label and announcements
+        const end = counterText
+            ? b `<span class="counter">${counterText}</span>`
+            : A;
+        // Announce if there is an error and error text visible.
+        // If refreshErrorAlert is true, do not announce. This will remove the
+        // role="alert" attribute. Another render cycle will happen after an
+        // animation frame to re-add the role.
+        const shouldErrorAnnounce = this.error && this.errorText && !this.refreshErrorAlert;
+        const role = shouldErrorAnnounce ? 'alert' : A;
+        return b `
+      <div class="supporting-text" role=${role}>${start}${end}</div>
+      <slot
+        name="aria-describedby"
+        @slotchange=${this.updateSlottedAriaDescribedBy}></slot>
+    `;
+    }
+    updateSlottedAriaDescribedBy() {
+        for (const element of this.slottedAriaDescribedBy) {
+            D(b `${this.supportingOrErrorText} ${this.counterText}`, element);
+            element.setAttribute('hidden', '');
+        }
+    }
+    renderLabel(isFloating) {
+        if (!this.label) {
+            return A;
+        }
+        let visible;
+        if (isFloating) {
+            // Floating label is visible when focused/populated or when animating.
+            visible = this.focused || this.populated || this.isAnimating;
+        }
+        else {
+            // Resting label is visible when unfocused. It is never visible while
+            // animating.
+            visible = !this.focused && !this.populated && !this.isAnimating;
+        }
+        const classes = {
+            'hidden': !visible,
+            'floating': isFloating,
+            'resting': !isFloating,
+        };
+        // Add '*' if a label is present and the field is required
+        const labelText = `${this.label}${this.required && !this.noAsterisk ? '*' : ''}`;
+        return b `
+      <span class="label ${e$2(classes)}" aria-hidden=${!visible}
+        >${labelText}</span
+      >
+    `;
+    }
+    animateLabelIfNeeded({ wasFocused, wasPopulated, }) {
+        if (!this.label) {
+            return;
+        }
+        wasFocused ??= this.focused;
+        wasPopulated ??= this.populated;
+        const wasFloating = wasFocused || wasPopulated;
+        const shouldBeFloating = this.focused || this.populated;
+        if (wasFloating === shouldBeFloating) {
+            return;
+        }
+        const keyframes = this.getLabelKeyframes();
+        if (!keyframes.length) {
+            return;
+        }
+        this.isAnimating = true;
+        this.labelAnimation?.cancel();
+        // Only one label is visible at a time for clearer text rendering.
+        // The floating label is visible and used during animation. At the end of
+        // the animation, it will either remain visible (if floating) or hide and
+        // the resting label will be shown.
+        //
+        // We don't use forward filling because if the dimensions of the text field
+        // change (leading icon removed, density changes, etc), then the animation
+        // will be inaccurate.
+        //
+        // Re-calculating the animation each time will prevent any visual glitches
+        // from appearing.
+        // TODO(b/241113345): use animation tokens
+        this.labelAnimation = this.floatingLabelEl?.animate(keyframes, {
+            duration: 150,
+            easing: EASING.STANDARD,
+        });
+        this.labelAnimation?.addEventListener('finish', () => {
+            // At the end of the animation, update the visible label.
+            this.isAnimating = false;
+        });
+    }
+    getLabelKeyframes() {
+        const { floatingLabelEl, restingLabelEl } = this;
+        if (!floatingLabelEl || !restingLabelEl) {
+            return [];
+        }
+        const { x: floatingX, y: floatingY, height: floatingHeight, } = floatingLabelEl.getBoundingClientRect();
+        const { x: restingX, y: restingY, height: restingHeight, } = restingLabelEl.getBoundingClientRect();
+        const floatingScrollWidth = floatingLabelEl.scrollWidth;
+        const restingScrollWidth = restingLabelEl.scrollWidth;
+        // If either label has no dimensions (e.g., display: none), skip animation
+        if (floatingScrollWidth === 0 || restingScrollWidth === 0) {
+            return [];
+        }
+        // Scale by width ratio instead of font size since letter-spacing will scale
+        // incorrectly. Using the width we can better approximate the adjusted
+        // scale and compensate for tracking and overflow.
+        // (use scrollWidth instead of width to account for clipped labels)
+        const scale = restingScrollWidth / floatingScrollWidth;
+        const xDelta = restingX - floatingX;
+        // The line-height of the resting and floating label are different. When
+        // we move the floating label down to the resting label's position, it won't
+        // exactly match because of this. We need to adjust by half of what the
+        // final scaled floating label's height will be.
+        const yDelta = restingY -
+            floatingY +
+            Math.round((restingHeight - floatingHeight * scale) / 2);
+        // Create the two transforms: floating to resting (using the calculations
+        // above), and resting to floating (re-setting the transform to initial
+        // values).
+        const restTransform = `translateX(${xDelta}px) translateY(${yDelta}px) scale(${scale})`;
+        const floatTransform = `translateX(0) translateY(0) scale(1)`;
+        // Constrain the floating labels width to a scaled percentage of the
+        // resting label's width. This will prevent long clipped labels from
+        // overflowing the container.
+        const restingClientWidth = restingLabelEl.clientWidth;
+        const isRestingClipped = restingScrollWidth > restingClientWidth;
+        const width = isRestingClipped ? `${restingClientWidth / scale}px` : '';
+        if (this.focused || this.populated) {
+            return [
+                { transform: restTransform, width },
+                { transform: floatTransform, width },
+            ];
+        }
+        return [
+            { transform: floatTransform, width },
+            { transform: restTransform, width },
+        ];
+    }
+    getSurfacePositionClientRect() {
+        return this.containerEl.getBoundingClientRect();
+    }
+}
+__decorate([
+    n$1({ type: Boolean })
+], Field.prototype, "disabled", void 0);
+__decorate([
+    n$1({ type: Boolean })
+], Field.prototype, "error", void 0);
+__decorate([
+    n$1({ type: Boolean })
+], Field.prototype, "focused", void 0);
+__decorate([
+    n$1()
+], Field.prototype, "label", void 0);
+__decorate([
+    n$1({ type: Boolean, attribute: 'no-asterisk' })
+], Field.prototype, "noAsterisk", void 0);
+__decorate([
+    n$1({ type: Boolean })
+], Field.prototype, "populated", void 0);
+__decorate([
+    n$1({ type: Boolean })
+], Field.prototype, "required", void 0);
+__decorate([
+    n$1({ type: Boolean })
+], Field.prototype, "resizable", void 0);
+__decorate([
+    n$1({ attribute: 'supporting-text' })
+], Field.prototype, "supportingText", void 0);
+__decorate([
+    n$1({ attribute: 'error-text' })
+], Field.prototype, "errorText", void 0);
+__decorate([
+    n$1({ type: Number })
+], Field.prototype, "count", void 0);
+__decorate([
+    n$1({ type: Number })
+], Field.prototype, "max", void 0);
+__decorate([
+    n$1({ type: Boolean, attribute: 'has-start' })
+], Field.prototype, "hasStart", void 0);
+__decorate([
+    n$1({ type: Boolean, attribute: 'has-end' })
+], Field.prototype, "hasEnd", void 0);
+__decorate([
+    o$1({ slot: 'aria-describedby' })
+], Field.prototype, "slottedAriaDescribedBy", void 0);
+__decorate([
+    r$1()
+], Field.prototype, "isAnimating", void 0);
+__decorate([
+    r$1()
+], Field.prototype, "refreshErrorAlert", void 0);
+__decorate([
+    r$1()
+], Field.prototype, "disableTransitions", void 0);
+__decorate([
+    e$1('.label.floating')
+], Field.prototype, "floatingLabelEl", void 0);
+__decorate([
+    e$1('.label.resting')
+], Field.prototype, "restingLabelEl", void 0);
+__decorate([
+    e$1('.container')
+], Field.prototype, "containerEl", void 0);
+
+/**
+ * @license
+ * Copyright 2024 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+// Generated stylesheet for ./field/internal/shared-styles.css.
+const styles$5 = i$2 `:host{display:inline-flex;resize:both}.field{display:flex;flex:1;flex-direction:column;writing-mode:horizontal-tb;max-width:100%}.container-overflow{border-start-start-radius:var(--_container-shape-start-start);border-start-end-radius:var(--_container-shape-start-end);border-end-end-radius:var(--_container-shape-end-end);border-end-start-radius:var(--_container-shape-end-start);display:flex;height:100%;position:relative}.container{align-items:center;border-radius:inherit;display:flex;flex:1;max-height:100%;min-height:100%;min-width:min-content;position:relative}.field,.container-overflow{resize:inherit}.resizable:not(.disabled) .container{resize:inherit;overflow:hidden}.disabled{pointer-events:none}slot[name=container]{border-radius:inherit}slot[name=container]::slotted(*){border-radius:inherit;inset:0;pointer-events:none;position:absolute}@layer styles{.start,.middle,.end{display:flex;box-sizing:border-box;height:100%;position:relative}.start{color:var(--_leading-content-color)}.end{color:var(--_trailing-content-color)}.start,.end{align-items:center;justify-content:center}.with-start .start{margin-inline:var(--_with-leading-content-leading-space) var(--_content-space)}.with-end .end{margin-inline:var(--_content-space) var(--_with-trailing-content-trailing-space)}.middle{align-items:stretch;align-self:baseline;flex:1}.content{color:var(--_content-color);display:flex;flex:1;opacity:0;transition:opacity 83ms cubic-bezier(0.2, 0, 0, 1)}.no-label .content,.focused .content,.populated .content{opacity:1;transition-delay:67ms}:is(.disabled,.disable-transitions) .content{transition:none}.content ::slotted(*){all:unset;color:currentColor;font-family:var(--_content-font);font-size:var(--_content-size);line-height:var(--_content-line-height);font-weight:var(--_content-weight);width:100%;overflow-wrap:revert;white-space:revert}.content ::slotted(:not(textarea)){padding-top:var(--_top-space);padding-bottom:var(--_bottom-space)}.content ::slotted(textarea){margin-top:var(--_top-space);margin-bottom:var(--_bottom-space)}:hover .content{color:var(--_hover-content-color)}:hover .start{color:var(--_hover-leading-content-color)}:hover .end{color:var(--_hover-trailing-content-color)}.focused .content{color:var(--_focus-content-color)}.focused .start{color:var(--_focus-leading-content-color)}.focused .end{color:var(--_focus-trailing-content-color)}.disabled .content{color:var(--_disabled-content-color)}.disabled.no-label .content,.disabled.focused .content,.disabled.populated .content{opacity:var(--_disabled-content-opacity)}.disabled .start{color:var(--_disabled-leading-content-color);opacity:var(--_disabled-leading-content-opacity)}.disabled .end{color:var(--_disabled-trailing-content-color);opacity:var(--_disabled-trailing-content-opacity)}.error .content{color:var(--_error-content-color)}.error .start{color:var(--_error-leading-content-color)}.error .end{color:var(--_error-trailing-content-color)}.error:hover .content{color:var(--_error-hover-content-color)}.error:hover .start{color:var(--_error-hover-leading-content-color)}.error:hover .end{color:var(--_error-hover-trailing-content-color)}.error.focused .content{color:var(--_error-focus-content-color)}.error.focused .start{color:var(--_error-focus-leading-content-color)}.error.focused .end{color:var(--_error-focus-trailing-content-color)}}@layer hcm{@media(forced-colors: active){.disabled :is(.start,.content,.end){color:GrayText;opacity:1}}}@layer styles{.label{box-sizing:border-box;color:var(--_label-text-color);overflow:hidden;max-width:100%;text-overflow:ellipsis;white-space:nowrap;z-index:1;font-family:var(--_label-text-font);font-size:var(--_label-text-size);line-height:var(--_label-text-line-height);font-weight:var(--_label-text-weight);width:min-content}.label-wrapper{inset:0;pointer-events:none;position:absolute}.label.resting{position:absolute;top:var(--_top-space)}.label.floating{font-size:var(--_label-text-populated-size);line-height:var(--_label-text-populated-line-height);transform-origin:top left}.label.hidden{opacity:0}.no-label .label{display:none}.label-wrapper{inset:0;position:absolute;text-align:initial}:hover .label{color:var(--_hover-label-text-color)}.focused .label{color:var(--_focus-label-text-color)}.disabled .label{color:var(--_disabled-label-text-color)}.disabled .label:not(.hidden){opacity:var(--_disabled-label-text-opacity)}.error .label{color:var(--_error-label-text-color)}.error:hover .label{color:var(--_error-hover-label-text-color)}.error.focused .label{color:var(--_error-focus-label-text-color)}}@layer hcm{@media(forced-colors: active){.disabled .label:not(.hidden){color:GrayText;opacity:1}}}@layer styles{.supporting-text{color:var(--_supporting-text-color);display:flex;font-family:var(--_supporting-text-font);font-size:var(--_supporting-text-size);line-height:var(--_supporting-text-line-height);font-weight:var(--_supporting-text-weight);gap:16px;justify-content:space-between;padding-inline-start:var(--_supporting-text-leading-space);padding-inline-end:var(--_supporting-text-trailing-space);padding-top:var(--_supporting-text-top-space)}.supporting-text :nth-child(2){flex-shrink:0}:hover .supporting-text{color:var(--_hover-supporting-text-color)}.focus .supporting-text{color:var(--_focus-supporting-text-color)}.disabled .supporting-text{color:var(--_disabled-supporting-text-color);opacity:var(--_disabled-supporting-text-opacity)}.error .supporting-text{color:var(--_error-supporting-text-color)}.error:hover .supporting-text{color:var(--_error-hover-supporting-text-color)}.error.focus .supporting-text{color:var(--_error-focus-supporting-text-color)}}@layer hcm{@media(forced-colors: active){.disabled .supporting-text{color:GrayText;opacity:1}}}
+`;
 
 /**
  * @license
  * Copyright 2020 Google LLC
  * SPDX-License-Identifier: BSD-3-Clause
- */const l=e$3(class extends i$3{constructor(r){if(super(r),r.type!==t.PROPERTY&&r.type!==t.ATTRIBUTE&&r.type!==t.BOOLEAN_ATTRIBUTE)throw Error("The `live` directive is not allowed on child or event bindings");if(!f(r))throw Error("`live` bindings can only contain a single expression")}render(r){return r}update(i,[t$1]){if(t$1===T||t$1===E)return t$1;const o=i.element,l=i.name;if(i.type===t.PROPERTY){if(t$1===o[l])return T}else if(i.type===t.BOOLEAN_ATTRIBUTE){if(!!t$1===o.hasAttribute(l))return T}else if(i.type===t.ATTRIBUTE&&o.getAttribute(l)===t$1+"")return T;return m(i),t$1}});
+ */const r=o=>void 0===o.strings,m={},p=(o,t=m)=>o._$AH=t;
+
+/**
+ * @license
+ * Copyright 2020 Google LLC
+ * SPDX-License-Identifier: BSD-3-Clause
+ */const l=e$3(class extends i$3{constructor(r$1){if(super(r$1),r$1.type!==t.PROPERTY&&r$1.type!==t.ATTRIBUTE&&r$1.type!==t.BOOLEAN_ATTRIBUTE)throw Error("The `live` directive is not allowed on child or event bindings");if(!r(r$1))throw Error("`live` bindings can only contain a single expression")}render(r){return r}update(i,[t$1]){if(t$1===E||t$1===A)return t$1;const o=i.element,l=i.name;if(i.type===t.PROPERTY){if(t$1===o[l])return E}else if(i.type===t.BOOLEAN_ATTRIBUTE){if(!!t$1===o.hasAttribute(l))return E}else if(i.type===t.ATTRIBUTE&&o.getAttribute(l)===t$1+"")return E;return p(i),t$1}});
 
 /**
  * @license
@@ -2401,7 +2287,7 @@ class TextField extends textFieldBaseClass {
             'textarea': this.type === 'textarea',
             'no-spinner': this.noSpinner,
         };
-        return x `
+        return b `
       <span class="text-field ${e$2(classes)}">
         ${this.renderField()}
       </span>
@@ -2420,7 +2306,7 @@ class TextField extends textFieldBaseClass {
         }
     }
     renderField() {
-        return u$1 `<${this.fieldTag}
+        return u `<${this.fieldTag}
       class="field"
       count=${this.value.length}
       ?disabled=${this.disabled}
@@ -2445,14 +2331,14 @@ class TextField extends textFieldBaseClass {
     </${this.fieldTag}>`;
     }
     renderLeadingIcon() {
-        return x `
+        return b `
       <span class="icon leading" slot="start">
         <slot name="leading-icon" @slotchange=${this.handleIconChange}></slot>
       </span>
     `;
     }
     renderTrailingIcon() {
-        return x `
+        return b `
       <span class="icon trailing" slot="end">
         <slot name="trailing-icon" @slotchange=${this.handleIconChange}></slot>
       </span>
@@ -2460,7 +2346,7 @@ class TextField extends textFieldBaseClass {
     }
     renderInputOrTextarea() {
         const style = { 'direction': this.textDirection };
-        const ariaLabel = this.ariaLabel || this.label || E;
+        const ariaLabel = this.ariaLabel || this.label || A;
         // lit-anaylzer `autocomplete` types are too strict
         // tslint:disable-next-line:no-any
         const autocomplete = this.autocomplete;
@@ -2469,19 +2355,19 @@ class TextField extends textFieldBaseClass {
         const hasMaxLength = (this.maxLength ?? -1) > -1;
         const hasMinLength = (this.minLength ?? -1) > -1;
         if (this.type === 'textarea') {
-            return x `
+            return b `
         <textarea
           class="input"
           style=${o(style)}
           aria-describedby="description"
           aria-invalid=${this.hasError}
           aria-label=${ariaLabel}
-          autocomplete=${autocomplete || E}
-          name=${this.name || E}
+          autocomplete=${autocomplete || A}
+          name=${this.name || A}
           ?disabled=${this.disabled}
-          maxlength=${hasMaxLength ? this.maxLength : E}
-          minlength=${hasMinLength ? this.minLength : E}
-          placeholder=${this.placeholder || E}
+          maxlength=${hasMaxLength ? this.maxLength : A}
+          minlength=${hasMinLength ? this.minLength : A}
+          placeholder=${this.placeholder || A}
           ?readonly=${this.readOnly}
           ?required=${this.required}
           rows=${this.rows}
@@ -2500,7 +2386,7 @@ class TextField extends textFieldBaseClass {
         // analyzer is fixed
         // tslint:disable-next-line:no-any
         const inputMode = this.inputMode;
-        return x `
+        return b `
       <div class="input-wrapper">
         ${prefix}
         <input
@@ -2509,20 +2395,20 @@ class TextField extends textFieldBaseClass {
           aria-describedby="description"
           aria-invalid=${this.hasError}
           aria-label=${ariaLabel}
-          autocomplete=${autocomplete || E}
-          name=${this.name || E}
+          autocomplete=${autocomplete || A}
+          name=${this.name || A}
           ?disabled=${this.disabled}
-          inputmode=${inputMode || E}
-          max=${(this.max || E)}
-          maxlength=${hasMaxLength ? this.maxLength : E}
-          min=${(this.min || E)}
-          minlength=${hasMinLength ? this.minLength : E}
-          pattern=${this.pattern || E}
-          placeholder=${this.placeholder || E}
+          inputmode=${inputMode || A}
+          max=${(this.max || A)}
+          maxlength=${hasMaxLength ? this.maxLength : A}
+          min=${(this.min || A)}
+          minlength=${hasMinLength ? this.minLength : A}
+          pattern=${this.pattern || A}
+          placeholder=${this.placeholder || A}
           ?readonly=${this.readOnly}
           ?required=${this.required}
           ?multiple=${this.multiple}
-          step=${(this.step || E)}
+          step=${(this.step || A)}
           type=${this.type}
           .value=${l(this.value)}
           @change=${this.redispatchEvent}
@@ -2542,13 +2428,13 @@ class TextField extends textFieldBaseClass {
     }
     renderAffix(text, isSuffix) {
         if (!text) {
-            return E;
+            return A;
         }
         const classes = {
             'suffix': isSuffix,
             'prefix': !isSuffix,
         };
-        return x `<span class="${e$2(classes)}">${text}</span>`;
+        return b `<span class="${e$2(classes)}">${text}</span>`;
     }
     getErrorText() {
         return this.error ? this.errorText : this.nativeErrorText;
@@ -2716,16 +2602,16 @@ __decorate([
     n$1({ reflect: true })
 ], TextField.prototype, "autocomplete", void 0);
 __decorate([
-    r()
+    r$1()
 ], TextField.prototype, "dirty", void 0);
 __decorate([
-    r()
+    r$1()
 ], TextField.prototype, "focused", void 0);
 __decorate([
-    r()
+    r$1()
 ], TextField.prototype, "nativeError", void 0);
 __decorate([
-    r()
+    r$1()
 ], TextField.prototype, "nativeErrorText", void 0);
 __decorate([
     e$1('.input')
@@ -2746,7 +2632,7 @@ __decorate([
  * SPDX-License-Identifier: Apache-2.0
  */
 // Generated stylesheet for ./textfield/internal/shared-styles.css.
-const styles$5 = i$2 `:host{display:inline-flex;outline:none;resize:both;text-align:start;-webkit-tap-highlight-color:rgba(0,0,0,0)}.text-field,.field{width:100%}.text-field{display:inline-flex}.field{cursor:text}.disabled .field{cursor:default}.text-field,.textarea .field{resize:inherit}slot[name=container]{border-radius:inherit}.icon{color:currentColor;display:flex;align-items:center;justify-content:center;fill:currentColor;position:relative}.icon ::slotted(*){display:flex;position:absolute}[has-start] .icon.leading{font-size:var(--_leading-icon-size);height:var(--_leading-icon-size);width:var(--_leading-icon-size)}[has-end] .icon.trailing{font-size:var(--_trailing-icon-size);height:var(--_trailing-icon-size);width:var(--_trailing-icon-size)}.input-wrapper{display:flex}.input-wrapper>*{all:inherit;padding:0}.input{caret-color:var(--_caret-color);overflow-x:hidden;text-align:inherit}.input::placeholder{color:currentColor;opacity:1}.input::-webkit-calendar-picker-indicator{display:none}.input::-webkit-search-decoration,.input::-webkit-search-cancel-button{display:none}@media(forced-colors: active){.input{background:none}}.no-spinner .input::-webkit-inner-spin-button,.no-spinner .input::-webkit-outer-spin-button{display:none}.no-spinner .input[type=number]{-moz-appearance:textfield}:focus-within .input{caret-color:var(--_focus-caret-color)}.error:focus-within .input{caret-color:var(--_error-focus-caret-color)}.text-field:not(.disabled) .prefix{color:var(--_input-text-prefix-color)}.text-field:not(.disabled) .suffix{color:var(--_input-text-suffix-color)}.text-field:not(.disabled) .input::placeholder{color:var(--_input-text-placeholder-color)}.prefix,.suffix{text-wrap:nowrap;width:min-content}.prefix{padding-inline-end:var(--_input-text-prefix-trailing-space)}.suffix{padding-inline-start:var(--_input-text-suffix-leading-space)}
+const styles$4 = i$2 `:host{display:inline-flex;outline:none;resize:both;text-align:start;-webkit-tap-highlight-color:rgba(0,0,0,0)}.text-field,.field{width:100%}.text-field{display:inline-flex}.field{cursor:text}.disabled .field{cursor:default}.text-field,.textarea .field{resize:inherit}slot[name=container]{border-radius:inherit}.icon{color:currentColor;display:flex;align-items:center;justify-content:center;fill:currentColor;position:relative}.icon ::slotted(*){display:flex;position:absolute}[has-start] .icon.leading{font-size:var(--_leading-icon-size);height:var(--_leading-icon-size);width:var(--_leading-icon-size)}[has-end] .icon.trailing{font-size:var(--_trailing-icon-size);height:var(--_trailing-icon-size);width:var(--_trailing-icon-size)}.input-wrapper{display:flex}.input-wrapper>*{all:inherit;padding:0}.input{caret-color:var(--_caret-color);overflow-x:hidden;text-align:inherit}.input::placeholder{color:currentColor;opacity:1}.input::-webkit-calendar-picker-indicator{display:none}.input::-webkit-search-decoration,.input::-webkit-search-cancel-button{display:none}@media(forced-colors: active){.input{background:none}}.no-spinner .input::-webkit-inner-spin-button,.no-spinner .input::-webkit-outer-spin-button{display:none}.no-spinner .input[type=number]{-moz-appearance:textfield}:focus-within .input{caret-color:var(--_focus-caret-color)}.error:focus-within .input{caret-color:var(--_error-focus-caret-color)}.text-field:not(.disabled) .prefix{color:var(--_input-text-prefix-color)}.text-field:not(.disabled) .suffix{color:var(--_input-text-suffix-color)}.text-field:not(.disabled) .input::placeholder{color:var(--_input-text-placeholder-color)}.prefix,.suffix{text-wrap:nowrap;width:min-content}.prefix{padding-inline-end:var(--_input-text-prefix-trailing-space)}.suffix{padding-inline-start:var(--_input-text-suffix-leading-space)}
 `;
 
 /**
@@ -2755,7 +2641,7 @@ const styles$5 = i$2 `:host{display:inline-flex;outline:none;resize:both;text-al
  * SPDX-License-Identifier: Apache-2.0
  */
 // Generated stylesheet for ./button/internal/shared-styles.css.
-const styles$4 = i$2 `:host{border-start-start-radius:var(--_container-shape-start-start);border-start-end-radius:var(--_container-shape-start-end);border-end-start-radius:var(--_container-shape-end-start);border-end-end-radius:var(--_container-shape-end-end);box-sizing:border-box;cursor:pointer;display:inline-flex;gap:8px;min-height:var(--_container-height);outline:none;padding-block:calc((var(--_container-height) - max(var(--_label-text-line-height),var(--_icon-size)))/2);padding-inline-start:var(--_leading-space);padding-inline-end:var(--_trailing-space);place-content:center;place-items:center;position:relative;font-family:var(--_label-text-font);font-size:var(--_label-text-size);line-height:var(--_label-text-line-height);font-weight:var(--_label-text-weight);text-overflow:ellipsis;text-wrap:nowrap;user-select:none;-webkit-tap-highlight-color:rgba(0,0,0,0);vertical-align:top;--md-ripple-hover-color: var(--_hover-state-layer-color);--md-ripple-pressed-color: var(--_pressed-state-layer-color);--md-ripple-hover-opacity: var(--_hover-state-layer-opacity);--md-ripple-pressed-opacity: var(--_pressed-state-layer-opacity)}md-focus-ring{--md-focus-ring-shape-start-start: var(--_container-shape-start-start);--md-focus-ring-shape-start-end: var(--_container-shape-start-end);--md-focus-ring-shape-end-end: var(--_container-shape-end-end);--md-focus-ring-shape-end-start: var(--_container-shape-end-start)}:host(:is([disabled],[soft-disabled])){cursor:default;pointer-events:none}.button{border-radius:inherit;cursor:inherit;display:inline-flex;align-items:center;justify-content:center;border:none;outline:none;-webkit-appearance:none;vertical-align:middle;background:rgba(0,0,0,0);text-decoration:none;min-width:calc(64px - var(--_leading-space) - var(--_trailing-space));width:100%;z-index:0;height:100%;font:inherit;color:var(--_label-text-color);padding:0;gap:inherit;text-transform:inherit}.button::-moz-focus-inner{padding:0;border:0}:host(:hover) .button{color:var(--_hover-label-text-color)}:host(:focus-within) .button{color:var(--_focus-label-text-color)}:host(:active) .button{color:var(--_pressed-label-text-color)}.background{background:var(--_container-color);border-radius:inherit;inset:0;position:absolute}.label{overflow:hidden}:is(.button,.label,.label slot),.label ::slotted(*){text-overflow:inherit}:host(:is([disabled],[soft-disabled])) .label{color:var(--_disabled-label-text-color);opacity:var(--_disabled-label-text-opacity)}:host(:is([disabled],[soft-disabled])) .background{background:var(--_disabled-container-color);opacity:var(--_disabled-container-opacity)}@media(forced-colors: active){.background{border:1px solid CanvasText}:host(:is([disabled],[soft-disabled])){--_disabled-icon-color: GrayText;--_disabled-icon-opacity: 1;--_disabled-container-opacity: 1;--_disabled-label-text-color: GrayText;--_disabled-label-text-opacity: 1}}:host([has-icon]:not([trailing-icon])){padding-inline-start:var(--_with-leading-icon-leading-space);padding-inline-end:var(--_with-leading-icon-trailing-space)}:host([has-icon][trailing-icon]){padding-inline-start:var(--_with-trailing-icon-leading-space);padding-inline-end:var(--_with-trailing-icon-trailing-space)}::slotted([slot=icon]){display:inline-flex;position:relative;writing-mode:horizontal-tb;fill:currentColor;flex-shrink:0;color:var(--_icon-color);font-size:var(--_icon-size);inline-size:var(--_icon-size);block-size:var(--_icon-size)}:host(:hover) ::slotted([slot=icon]){color:var(--_hover-icon-color)}:host(:focus-within) ::slotted([slot=icon]){color:var(--_focus-icon-color)}:host(:active) ::slotted([slot=icon]){color:var(--_pressed-icon-color)}:host(:is([disabled],[soft-disabled])) ::slotted([slot=icon]){color:var(--_disabled-icon-color);opacity:var(--_disabled-icon-opacity)}.touch{position:absolute;top:50%;height:48px;left:0;right:0;transform:translateY(-50%)}:host([touch-target=wrapper]){margin:max(0px,(48px - var(--_container-height))/2) 0}:host([touch-target=none]) .touch{display:none}
+const styles$3 = i$2 `:host{border-start-start-radius:var(--_container-shape-start-start);border-start-end-radius:var(--_container-shape-start-end);border-end-start-radius:var(--_container-shape-end-start);border-end-end-radius:var(--_container-shape-end-end);box-sizing:border-box;cursor:pointer;display:inline-flex;gap:8px;min-height:var(--_container-height);outline:none;padding-block:calc((var(--_container-height) - max(var(--_label-text-line-height),var(--_icon-size)))/2);padding-inline-start:var(--_leading-space);padding-inline-end:var(--_trailing-space);place-content:center;place-items:center;position:relative;font-family:var(--_label-text-font);font-size:var(--_label-text-size);line-height:var(--_label-text-line-height);font-weight:var(--_label-text-weight);text-overflow:ellipsis;text-wrap:nowrap;user-select:none;-webkit-tap-highlight-color:rgba(0,0,0,0);vertical-align:top;--md-ripple-hover-color: var(--_hover-state-layer-color);--md-ripple-pressed-color: var(--_pressed-state-layer-color);--md-ripple-hover-opacity: var(--_hover-state-layer-opacity);--md-ripple-pressed-opacity: var(--_pressed-state-layer-opacity)}md-focus-ring{--md-focus-ring-shape-start-start: var(--_container-shape-start-start);--md-focus-ring-shape-start-end: var(--_container-shape-start-end);--md-focus-ring-shape-end-end: var(--_container-shape-end-end);--md-focus-ring-shape-end-start: var(--_container-shape-end-start)}:host(:is([disabled],[soft-disabled])){cursor:default;pointer-events:none}.button{border-radius:inherit;cursor:inherit;display:inline-flex;align-items:center;justify-content:center;border:none;outline:none;-webkit-appearance:none;vertical-align:middle;background:rgba(0,0,0,0);text-decoration:none;min-width:calc(64px - var(--_leading-space) - var(--_trailing-space));width:100%;z-index:0;height:100%;font:inherit;color:var(--_label-text-color);padding:0;gap:inherit;text-transform:inherit}.button::-moz-focus-inner{padding:0;border:0}:host(:hover) .button{color:var(--_hover-label-text-color)}:host(:focus-within) .button{color:var(--_focus-label-text-color)}:host(:active) .button{color:var(--_pressed-label-text-color)}.background{background:var(--_container-color);border-radius:inherit;inset:0;position:absolute}.label{overflow:hidden}:is(.button,.label,.label slot),.label ::slotted(*){text-overflow:inherit}:host(:is([disabled],[soft-disabled])) .label{color:var(--_disabled-label-text-color);opacity:var(--_disabled-label-text-opacity)}:host(:is([disabled],[soft-disabled])) .background{background:var(--_disabled-container-color);opacity:var(--_disabled-container-opacity)}@media(forced-colors: active){.background{border:1px solid CanvasText}:host(:is([disabled],[soft-disabled])){--_disabled-icon-color: GrayText;--_disabled-icon-opacity: 1;--_disabled-container-opacity: 1;--_disabled-label-text-color: GrayText;--_disabled-label-text-opacity: 1}}:host([has-icon]:not([trailing-icon])){padding-inline-start:var(--_with-leading-icon-leading-space);padding-inline-end:var(--_with-leading-icon-trailing-space)}:host([has-icon][trailing-icon]){padding-inline-start:var(--_with-trailing-icon-leading-space);padding-inline-end:var(--_with-trailing-icon-trailing-space)}::slotted([slot=icon]){display:inline-flex;position:relative;writing-mode:horizontal-tb;fill:currentColor;flex-shrink:0;color:var(--_icon-color);font-size:var(--_icon-size);inline-size:var(--_icon-size);block-size:var(--_icon-size)}:host(:hover) ::slotted([slot=icon]){color:var(--_hover-icon-color)}:host(:focus-within) ::slotted([slot=icon]){color:var(--_focus-icon-color)}:host(:active) ::slotted([slot=icon]){color:var(--_pressed-icon-color)}:host(:is([disabled],[soft-disabled])) ::slotted([slot=icon]){color:var(--_disabled-icon-color);opacity:var(--_disabled-icon-opacity)}.touch{position:absolute;top:50%;height:48px;left:0;right:0;transform:translateY(-50%)}:host([touch-target=wrapper]){margin:max(0px,(48px - var(--_container-height))/2) 0}:host([touch-target=none]) .touch{display:none}
 `;
 
 /**
@@ -2860,29 +2746,13 @@ async function squelchEventsForMicrotask() {
  * SPDX-License-Identifier: Apache-2.0
  */
 // Separate variable needed for closure.
-const buttonBaseClass = mixinDelegatesAria(mixinElementInternals(i$1));
+const buttonBaseClass = mixinDelegatesAria(mixinFormSubmitter(mixinFormAssociated(mixinElementInternals(i$1))));
 /**
  * A button component.
  */
 class Button extends buttonBaseClass {
-    get name() {
-        return this.getAttribute('name') ?? '';
-    }
-    set name(name) {
-        this.setAttribute('name', name);
-    }
-    /**
-     * The associated form element with which this element's value will submit.
-     */
-    get form() {
-        return this[internals].form;
-    }
     constructor() {
         super();
-        /**
-         * Whether or not the button is disabled.
-         */
-        this.disabled = false;
         /**
          * Whether or not the button is "soft-disabled" (disabled but still
          * focusable).
@@ -2918,16 +2788,6 @@ class Button extends buttonBaseClass {
          * Whether to display the icon or not.
          */
         this.hasIcon = false;
-        /**
-         * The default behavior of the button. May be "button", "reset", or "submit"
-         * (default).
-         */
-        this.type = 'submit';
-        /**
-         * The value added to a form with the button's name when the button submits a
-         * form.
-         */
-        this.value = '';
         {
             this.addEventListener('click', this.handleClick.bind(this));
         }
@@ -2944,7 +2804,7 @@ class Button extends buttonBaseClass {
         // TODO(b/310046938): due to a limitation in focus ring/ripple, we can't use
         // the same ID for different elements, so we change the ID instead.
         const buttonId = this.href ? 'link' : 'button';
-        return x `
+        return b `
       ${this.renderElevationOrOutline?.()}
       <div class="background"></div>
       <md-focus-ring part="focus-ring" for=${buttonId}></md-focus-ring>
@@ -2958,43 +2818,43 @@ class Button extends buttonBaseClass {
     renderButton() {
         // Needed for closure conformance
         const { ariaLabel, ariaHasPopup, ariaExpanded } = this;
-        return x `<button
+        return b `<button
       id="button"
       class="button"
       ?disabled=${this.disabled}
-      aria-disabled=${this.softDisabled || E}
-      aria-label="${ariaLabel || E}"
-      aria-haspopup="${ariaHasPopup || E}"
-      aria-expanded="${ariaExpanded || E}">
+      aria-disabled=${this.softDisabled || A}
+      aria-label="${ariaLabel || A}"
+      aria-haspopup="${ariaHasPopup || A}"
+      aria-expanded="${ariaExpanded || A}">
       ${this.renderContent()}
     </button>`;
     }
     renderLink() {
         // Needed for closure conformance
         const { ariaLabel, ariaHasPopup, ariaExpanded } = this;
-        return x `<a
+        return b `<a
       id="link"
       class="button"
-      aria-label="${ariaLabel || E}"
-      aria-haspopup="${ariaHasPopup || E}"
-      aria-expanded="${ariaExpanded || E}"
-      aria-disabled=${this.disabled || this.softDisabled || E}
-      tabindex="${this.disabled && !this.softDisabled ? -1 : E}"
+      aria-label="${ariaLabel || A}"
+      aria-haspopup="${ariaHasPopup || A}"
+      aria-expanded="${ariaExpanded || A}"
+      aria-disabled=${this.disabled || this.softDisabled || A}
+      tabindex="${this.disabled && !this.softDisabled ? -1 : A}"
       href=${this.href}
-      download=${this.download || E}
-      target=${this.target || E}
+      download=${this.download || A}
+      target=${this.target || A}
       >${this.renderContent()}
     </a>`;
     }
     renderContent() {
-        const icon = x `<slot
+        const icon = b `<slot
       name="icon"
       @slotchange="${this.handleSlotChange}"></slot>`;
-        return x `
+        return b `
       <span class="touch"></span>
-      ${this.trailingIcon ? E : icon}
+      ${this.trailingIcon ? A : icon}
       <span class="label"><slot></slot></span>
-      ${this.trailingIcon ? icon : E}
+      ${this.trailingIcon ? icon : A}
     `;
     }
     handleClick(event) {
@@ -3016,19 +2876,11 @@ class Button extends buttonBaseClass {
         this.hasIcon = this.assignedIcons.length > 0;
     }
 }
-(() => {
-    setupFormSubmitter(Button);
-})();
-/** @nocollapse */
-Button.formAssociated = true;
 /** @nocollapse */
 Button.shadowRootOptions = {
     mode: 'open',
     delegatesFocus: true,
 };
-__decorate([
-    n$1({ type: Boolean, reflect: true })
-], Button.prototype, "disabled", void 0);
 __decorate([
     n$1({ type: Boolean, attribute: 'soft-disabled', reflect: true })
 ], Button.prototype, "softDisabled", void 0);
@@ -3047,12 +2899,6 @@ __decorate([
 __decorate([
     n$1({ type: Boolean, attribute: 'has-icon', reflect: true })
 ], Button.prototype, "hasIcon", void 0);
-__decorate([
-    n$1()
-], Button.prototype, "type", void 0);
-__decorate([
-    n$1({ reflect: true })
-], Button.prototype, "value", void 0);
 __decorate([
     e$1('.button')
 ], Button.prototype, "buttonElement", void 0);
@@ -3077,7 +2923,7 @@ class TextButton extends Button {
  * SPDX-License-Identifier: Apache-2.0
  */
 // Generated stylesheet for ./button/internal/text-styles.css.
-const styles$3 = i$2 `:host{--_container-height: var(--md-text-button-container-height, 40px);--_disabled-label-text-color: var(--md-text-button-disabled-label-text-color, var(--md-sys-color-on-surface, #1d1b20));--_disabled-label-text-opacity: var(--md-text-button-disabled-label-text-opacity, 0.38);--_focus-label-text-color: var(--md-text-button-focus-label-text-color, var(--md-sys-color-primary, #6750a4));--_hover-label-text-color: var(--md-text-button-hover-label-text-color, var(--md-sys-color-primary, #6750a4));--_hover-state-layer-color: var(--md-text-button-hover-state-layer-color, var(--md-sys-color-primary, #6750a4));--_hover-state-layer-opacity: var(--md-text-button-hover-state-layer-opacity, 0.08);--_label-text-color: var(--md-text-button-label-text-color, var(--md-sys-color-primary, #6750a4));--_label-text-font: var(--md-text-button-label-text-font, var(--md-sys-typescale-label-large-font, var(--md-ref-typeface-plain, Roboto)));--_label-text-line-height: var(--md-text-button-label-text-line-height, var(--md-sys-typescale-label-large-line-height, 1.25rem));--_label-text-size: var(--md-text-button-label-text-size, var(--md-sys-typescale-label-large-size, 0.875rem));--_label-text-weight: var(--md-text-button-label-text-weight, var(--md-sys-typescale-label-large-weight, var(--md-ref-typeface-weight-medium, 500)));--_pressed-label-text-color: var(--md-text-button-pressed-label-text-color, var(--md-sys-color-primary, #6750a4));--_pressed-state-layer-color: var(--md-text-button-pressed-state-layer-color, var(--md-sys-color-primary, #6750a4));--_pressed-state-layer-opacity: var(--md-text-button-pressed-state-layer-opacity, 0.12);--_disabled-icon-color: var(--md-text-button-disabled-icon-color, var(--md-sys-color-on-surface, #1d1b20));--_disabled-icon-opacity: var(--md-text-button-disabled-icon-opacity, 0.38);--_focus-icon-color: var(--md-text-button-focus-icon-color, var(--md-sys-color-primary, #6750a4));--_hover-icon-color: var(--md-text-button-hover-icon-color, var(--md-sys-color-primary, #6750a4));--_icon-color: var(--md-text-button-icon-color, var(--md-sys-color-primary, #6750a4));--_icon-size: var(--md-text-button-icon-size, 18px);--_pressed-icon-color: var(--md-text-button-pressed-icon-color, var(--md-sys-color-primary, #6750a4));--_container-shape-start-start: var(--md-text-button-container-shape-start-start, var(--md-text-button-container-shape, var(--md-sys-shape-corner-full, 9999px)));--_container-shape-start-end: var(--md-text-button-container-shape-start-end, var(--md-text-button-container-shape, var(--md-sys-shape-corner-full, 9999px)));--_container-shape-end-end: var(--md-text-button-container-shape-end-end, var(--md-text-button-container-shape, var(--md-sys-shape-corner-full, 9999px)));--_container-shape-end-start: var(--md-text-button-container-shape-end-start, var(--md-text-button-container-shape, var(--md-sys-shape-corner-full, 9999px)));--_leading-space: var(--md-text-button-leading-space, 12px);--_trailing-space: var(--md-text-button-trailing-space, 12px);--_with-leading-icon-leading-space: var(--md-text-button-with-leading-icon-leading-space, 12px);--_with-leading-icon-trailing-space: var(--md-text-button-with-leading-icon-trailing-space, 16px);--_with-trailing-icon-leading-space: var(--md-text-button-with-trailing-icon-leading-space, 16px);--_with-trailing-icon-trailing-space: var(--md-text-button-with-trailing-icon-trailing-space, 12px);--_container-color: none;--_disabled-container-color: none;--_disabled-container-opacity: 0}
+const styles$2 = i$2 `:host{--_container-height: var(--md-text-button-container-height, 40px);--_disabled-label-text-color: var(--md-text-button-disabled-label-text-color, var(--md-sys-color-on-surface, #1d1b20));--_disabled-label-text-opacity: var(--md-text-button-disabled-label-text-opacity, 0.38);--_focus-label-text-color: var(--md-text-button-focus-label-text-color, var(--md-sys-color-primary, #6750a4));--_hover-label-text-color: var(--md-text-button-hover-label-text-color, var(--md-sys-color-primary, #6750a4));--_hover-state-layer-color: var(--md-text-button-hover-state-layer-color, var(--md-sys-color-primary, #6750a4));--_hover-state-layer-opacity: var(--md-text-button-hover-state-layer-opacity, 0.08);--_label-text-color: var(--md-text-button-label-text-color, var(--md-sys-color-primary, #6750a4));--_label-text-font: var(--md-text-button-label-text-font, var(--md-sys-typescale-label-large-font, var(--md-ref-typeface-plain, Roboto)));--_label-text-line-height: var(--md-text-button-label-text-line-height, var(--md-sys-typescale-label-large-line-height, 1.25rem));--_label-text-size: var(--md-text-button-label-text-size, var(--md-sys-typescale-label-large-size, 0.875rem));--_label-text-weight: var(--md-text-button-label-text-weight, var(--md-sys-typescale-label-large-weight, var(--md-ref-typeface-weight-medium, 500)));--_pressed-label-text-color: var(--md-text-button-pressed-label-text-color, var(--md-sys-color-primary, #6750a4));--_pressed-state-layer-color: var(--md-text-button-pressed-state-layer-color, var(--md-sys-color-primary, #6750a4));--_pressed-state-layer-opacity: var(--md-text-button-pressed-state-layer-opacity, 0.12);--_disabled-icon-color: var(--md-text-button-disabled-icon-color, var(--md-sys-color-on-surface, #1d1b20));--_disabled-icon-opacity: var(--md-text-button-disabled-icon-opacity, 0.38);--_focus-icon-color: var(--md-text-button-focus-icon-color, var(--md-sys-color-primary, #6750a4));--_hover-icon-color: var(--md-text-button-hover-icon-color, var(--md-sys-color-primary, #6750a4));--_icon-color: var(--md-text-button-icon-color, var(--md-sys-color-primary, #6750a4));--_icon-size: var(--md-text-button-icon-size, 18px);--_pressed-icon-color: var(--md-text-button-pressed-icon-color, var(--md-sys-color-primary, #6750a4));--_container-shape-start-start: var(--md-text-button-container-shape-start-start, var(--md-text-button-container-shape, var(--md-sys-shape-corner-full, 9999px)));--_container-shape-start-end: var(--md-text-button-container-shape-start-end, var(--md-text-button-container-shape, var(--md-sys-shape-corner-full, 9999px)));--_container-shape-end-end: var(--md-text-button-container-shape-end-end, var(--md-text-button-container-shape, var(--md-sys-shape-corner-full, 9999px)));--_container-shape-end-start: var(--md-text-button-container-shape-end-start, var(--md-text-button-container-shape, var(--md-sys-shape-corner-full, 9999px)));--_leading-space: var(--md-text-button-leading-space, 12px);--_trailing-space: var(--md-text-button-trailing-space, 12px);--_with-leading-icon-leading-space: var(--md-text-button-with-leading-icon-leading-space, 12px);--_with-leading-icon-trailing-space: var(--md-text-button-with-leading-icon-trailing-space, 16px);--_with-trailing-icon-leading-space: var(--md-text-button-with-trailing-icon-leading-space, 16px);--_with-trailing-icon-trailing-space: var(--md-text-button-with-trailing-icon-trailing-space, 12px);--_container-color: none;--_disabled-container-color: none;--_disabled-container-opacity: 0}
 `;
 
 /**
@@ -3087,7 +2933,7 @@ const styles$3 = i$2 `:host{--_container-height: var(--md-text-button-container-
  */
 /**
  * @license
- * Copyright 2025 Omicron Energy GmbH
+ * Copyright 2026 OMICRON electronics GmbH
  * SPDX-License-Identifier: Apache-2.0
  */
 /**
@@ -3113,56 +2959,10 @@ const styles$3 = i$2 `:host{--_container-height: var(--md-text-button-container-
 class OscdTextButton extends ScopedElementsMixin(TextButton) {
 }
 OscdTextButton.scopedElements = {
-    'md-ripple': MdRipple,
-    'md-focus-ring': MdFocusRing,
+    'md-ripple': OscdRipple,
+    'md-focus-ring': OscdFocusRing,
 };
-OscdTextButton.styles = [styles$4, styles$3];
-
-/**
- * @license
- * Copyright 2022 Google LLC
- * SPDX-License-Identifier: Apache-2.0
- */
-/**
- * A component for elevation.
- */
-class Elevation extends i$1 {
-    connectedCallback() {
-        super.connectedCallback();
-        // Needed for VoiceOver, which will create a "group" if the element is a
-        // sibling to other content.
-        this.setAttribute('aria-hidden', 'true');
-    }
-    render() {
-        return x `<span class="shadow"></span>`;
-    }
-}
-
-/**
- * @license
- * Copyright 2024 Google LLC
- * SPDX-License-Identifier: Apache-2.0
- */
-// Generated stylesheet for ./elevation/internal/elevation-styles.css.
-const styles$2 = i$2 `:host,.shadow,.shadow::before,.shadow::after{border-radius:inherit;inset:0;position:absolute;transition-duration:inherit;transition-property:inherit;transition-timing-function:inherit}:host{display:flex;pointer-events:none;transition-property:box-shadow,opacity}.shadow::before,.shadow::after{content:"";transition-property:box-shadow,opacity;--_level: var(--md-elevation-level, 0);--_shadow-color: var(--md-elevation-shadow-color, var(--md-sys-color-shadow, #000))}.shadow::before{box-shadow:0px calc(1px*(clamp(0,var(--_level),1) + clamp(0,var(--_level) - 3,1) + 2*clamp(0,var(--_level) - 4,1))) calc(1px*(2*clamp(0,var(--_level),1) + clamp(0,var(--_level) - 2,1) + clamp(0,var(--_level) - 4,1))) 0px var(--_shadow-color);opacity:.3}.shadow::after{box-shadow:0px calc(1px*(clamp(0,var(--_level),1) + clamp(0,var(--_level) - 1,1) + 2*clamp(0,var(--_level) - 2,3))) calc(1px*(3*clamp(0,var(--_level),2) + 2*clamp(0,var(--_level) - 2,3))) calc(1px*(clamp(0,var(--_level),4) + 2*clamp(0,var(--_level) - 4,1))) var(--_shadow-color);opacity:.15}
-`;
-
-/**
- * @license
- * Copyright 2022 Google LLC
- * SPDX-License-Identifier: Apache-2.0
- */
-/**
- * The `<md-elevation>` custom element with default styles.
- *
- * Elevation is the relative distance between two surfaces along the z-axis.
- *
- * @final
- * @suppress {visibility}
- */
-class MdElevation extends Elevation {
-}
-MdElevation.styles = [styles$2];
+OscdTextButton.styles = [styles$3, styles$2];
 
 /**
  * @license
@@ -3174,7 +2974,7 @@ MdElevation.styles = [styles$2];
  */
 class FilledButton extends Button {
     renderElevationOrOutline() {
-        return x `<md-elevation part="elevation"></md-elevation>`;
+        return b `<md-elevation part="elevation"></md-elevation>`;
     }
 }
 
@@ -3203,7 +3003,7 @@ const styles = i$2 `md-elevation{transition-duration:280ms}:host(:is([disabled],
  */
 /**
  * @license
- * Copyright 2025 Omicron Energy GmbH
+ * Copyright 2026 OMICRON electronics GmbH
  * SPDX-License-Identifier: Apache-2.0
  */
 /**
@@ -3229,15 +3029,15 @@ const styles = i$2 `md-elevation{transition-duration:280ms}:host(:is([disabled],
 class OscdFilledButton extends ScopedElementsMixin(FilledButton) {
 }
 OscdFilledButton.scopedElements = {
-    'md-ripple': MdRipple,
-    'md-focus-ring': MdFocusRing,
-    'md-elevation': MdElevation,
+    'md-ripple': OscdRipple,
+    'md-focus-ring': OscdFocusRing,
+    'md-elevation': OscdElevation,
 };
 OscdFilledButton.styles = [
-    styles$4,
+    styles$3,
     styles,
     styles$1,
 ];
 
-export { Field as F, OscdFilledButton as O, TextField as T, Validator as V, o as a, mixinConstraintValidation as b, mixinFormAssociated as c, onReportValidity as d, createValidator as e, getValidityAnchor as f, getFormValue as g, styles$5 as h, OscdTextButton as i, OscdDialog as j, isActivationClick as k, getFormState as l, mixinOnReportValidity as m, o$1 as o, redispatchEvent as r, styles$6 as s };
-//# sourceMappingURL=OscdFilledButton-CBa1pbad.js.map
+export { Field as F, OscdElevation as O, TextField as T, Validator as V, o as a, mixinConstraintValidation as b, onReportValidity as c, createValidator as d, styles$4 as e, OscdFilledButton as f, getValidityAnchor as g, OscdTextButton as h, OscdDialog as i, isActivationClick as j, mixinOnReportValidity as m, o$1 as o, redispatchEvent as r, styles$5 as s };
+//# sourceMappingURL=OscdFilledButton-C14o39Ts.js.map

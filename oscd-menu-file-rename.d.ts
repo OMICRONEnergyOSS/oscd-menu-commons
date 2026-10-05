@@ -11,7 +11,7 @@ declare global {
         'oscd-menu-file-rename': OscdMenuFileRename;
     }
 }
-declare const OscdMenuFileRename_base: typeof LitElement & import("@open-wc/scoped-elements/lit-element.js").ScopedElementsHostConstructor;
+declare const OscdMenuFileRename_base: typeof LitElement & import("@open-wc/dedupe-mixin").Constructor<import("@open-wc/scoped-elements/types.js").ScopedElementsHost> & import("@open-wc/scoped-elements/types.js").ScopedElementsHostConstructor;
 export default class OscdMenuFileRename extends OscdMenuFileRename_base {
     static scopedElements: {
         'oscd-dialog': typeof OscdDialog;

@@ -1,5 +1,5 @@
-import { m as mixinDelegatesAria, d as mixinElementInternals, s as setupFormSubmitter, r, g as internals, i as i$1, b as e, u, M as MdFocusRing, f as MdRipple } from './form-submitter-BnXEOv4K.js';
-import { i, _ as __decorate, n, E, x, a as i$2, S as ScopedElementsMixin } from './property-d5R0XF0B.js';
+import { m as mixinDelegatesAria, p as mixinFormSubmitter, d as mixinFormAssociated, f as mixinElementInternals, r, s as setupDispatchHooks, q as afterDispatch, i as i$1, b as e, u, O as OscdFocusRing, h as OscdRipple } from './form-submitter-BZoLMdvC.js';
+import { i, _ as __decorate, n, A, b, a as i$2, S as ScopedElementsMixin } from './property-CoNymZGd.js';
 
 /**
  * @license
@@ -25,7 +25,7 @@ function isRtl(el, shouldCheck = true) {
  * SPDX-License-Identifier: Apache-2.0
  */
 // Separate variable needed for closure.
-const iconButtonBaseClass = mixinDelegatesAria(mixinElementInternals(i));
+const iconButtonBaseClass = mixinDelegatesAria(mixinFormSubmitter(mixinFormAssociated(mixinElementInternals(i))));
 /**
  * A button for rendering icons.
  *
@@ -34,30 +34,8 @@ const iconButtonBaseClass = mixinDelegatesAria(mixinElementInternals(i));
  * @fires change {Event} Dispatched when a toggle button toggles --bubbles
  */
 class IconButton extends iconButtonBaseClass {
-    get name() {
-        return this.getAttribute('name') ?? '';
-    }
-    set name(name) {
-        this.setAttribute('name', name);
-    }
-    /**
-     * The associated form element with which this element's value will submit.
-     */
-    get form() {
-        return this[internals].form;
-    }
-    /**
-     * The labels this element is associated with.
-     */
-    get labels() {
-        return this[internals].labels;
-    }
     constructor() {
         super();
-        /**
-         * Disables the icon button and makes it non-interactive.
-         */
-        this.disabled = false;
         /**
          * "Soft-disables" the icon button (disabled but still focusable).
          *
@@ -99,20 +77,32 @@ class IconButton extends iconButtonBaseClass {
          * icon is provided.
          */
         this.selected = false;
-        /**
-         * The default behavior of the button. May be "button", "reset", or "submit"
-         * (default).
-         */
-        this.type = 'submit';
-        /**
-         * The value added to a form with the button's name when the button submits a
-         * form.
-         */
-        this.value = '';
         this.flipIcon = isRtl(this, this.flipIconInRtl);
-        {
-            this.addEventListener('click', this.handleClick.bind(this));
-        }
+        setupDispatchHooks(this, 'click');
+        this.addEventListener('click', (event) => {
+            // If the button is soft-disabled or a disabled link, we need to
+            // explicitly prevent the click from propagating to other event listeners
+            // as well as prevent the default action. This is because the underlying
+            // `<button>` or `<a>` element is not actually `:disabled`.
+            if (this.softDisabled || (this.disabled && this.href)) {
+                event.stopImmediatePropagation();
+                event.preventDefault();
+                return;
+            }
+            // Save current selected state to toggle, since an external event listener
+            // may also change the selected state on click.
+            const wasSelected = this.selected;
+            afterDispatch(event, () => {
+                if (!this.toggle || this.disabled || event.defaultPrevented) {
+                    return;
+                }
+                this.selected = !wasSelected;
+                this.dispatchEvent(new InputEvent('input', { bubbles: true, composed: true }));
+                // Bubbles but does not compose to mimic native browser <input> & <select>
+                // Additionally, native change event is not an InputEvent.
+                this.dispatchEvent(new Event('change', { bubbles: true }));
+            });
+        });
     }
     willUpdate() {
         // Link buttons cannot be disabled or soft-disabled.
@@ -126,8 +116,8 @@ class IconButton extends iconButtonBaseClass {
         // Needed for closure conformance
         const { ariaLabel, ariaHasPopup, ariaExpanded } = this;
         const hasToggledAriaLabel = ariaLabel && this.ariaLabelSelected;
-        const ariaPressedValue = !this.toggle ? E : this.selected;
-        let ariaLabelValue = E;
+        const ariaPressedValue = !this.toggle ? A : this.selected;
+        let ariaLabelValue = A;
         if (!this.href) {
             ariaLabelValue =
                 hasToggledAriaLabel && this.selected
@@ -137,31 +127,30 @@ class IconButton extends iconButtonBaseClass {
         return u `<${tag}
         class="icon-button ${e(this.getRenderClasses())}"
         id="button"
-        aria-label="${ariaLabelValue || E}"
-        aria-haspopup="${(!this.href && ariaHasPopup) || E}"
-        aria-expanded="${(!this.href && ariaExpanded) || E}"
+        aria-label="${ariaLabelValue || A}"
+        aria-haspopup="${(!this.href && ariaHasPopup) || A}"
+        aria-expanded="${(!this.href && ariaExpanded) || A}"
         aria-pressed="${ariaPressedValue}"
-        aria-disabled=${(!this.href && this.softDisabled) || E}
-        ?disabled="${!this.href && this.disabled}"
-        @click="${this.handleClickOnChild}">
+        aria-disabled=${(!this.href && this.softDisabled) || A}
+        ?disabled="${!this.href && this.disabled}">
         ${this.renderFocusRing()}
         ${this.renderRipple()}
-        ${!this.selected ? this.renderIcon() : E}
-        ${this.selected ? this.renderSelectedIcon() : E}
+        ${!this.selected ? this.renderIcon() : A}
+        ${this.selected ? this.renderSelectedIcon() : A}
         ${this.href ? this.renderLink() : this.renderTouchTarget()}
   </${tag}>`;
     }
     renderLink() {
         // Needed for closure conformance
         const { ariaLabel } = this;
-        return x `
+        return b `
       <a
         class="link"
         id="link"
         href="${this.href}"
-        download="${this.download || E}"
-        target="${this.target || E}"
-        aria-label="${ariaLabel || E}">
+        download="${this.download || A}"
+        target="${this.target || A}"
+        aria-label="${ariaLabel || A}">
         ${this.renderTouchTarget()}
       </a>
     `;
@@ -173,78 +162,40 @@ class IconButton extends iconButtonBaseClass {
         };
     }
     renderIcon() {
-        return x `<span class="icon"><slot></slot></span>`;
+        return b `<span class="icon"><slot></slot></span>`;
     }
     renderSelectedIcon() {
         // Use default slot as fallback to not require specifying multiple icons
-        return x `<span class="icon icon--selected"
+        return b `<span class="icon icon--selected"
       ><slot name="selected"><slot></slot></slot
     ></span>`;
     }
     renderTouchTarget() {
-        return x `<span class="touch"></span>`;
+        return b `<span class="touch"></span>`;
     }
     renderFocusRing() {
         // TODO(b/310046938): use the same id for both elements
-        return x `<md-focus-ring
+        return b `<md-focus-ring
       part="focus-ring"
       for=${this.href ? 'link' : 'button'}></md-focus-ring>`;
     }
     renderRipple() {
         const isRippleDisabled = !this.href && (this.disabled || this.softDisabled);
         // TODO(b/310046938): use the same id for both elements
-        return x `<md-ripple
-      for=${this.href ? 'link' : E}
+        return b `<md-ripple
+      for=${this.href ? 'link' : A}
       ?disabled="${isRippleDisabled}"></md-ripple>`;
     }
     connectedCallback() {
         this.flipIcon = isRtl(this, this.flipIconInRtl);
         super.connectedCallback();
     }
-    /** Handles a click on this element. */
-    handleClick(event) {
-        // If the icon button is soft-disabled, we need to explicitly prevent the
-        // click from propagating to other event listeners as well as prevent the
-        // default action.
-        if (!this.href && this.softDisabled) {
-            event.stopImmediatePropagation();
-            event.preventDefault();
-            return;
-        }
-    }
-    /**
-     * Handles a click on the child <div> or <button> element within this
-     * element's shadow DOM.
-     */
-    async handleClickOnChild(event) {
-        // Allow the event to propagate
-        await 0;
-        if (!this.toggle ||
-            this.disabled ||
-            this.softDisabled ||
-            event.defaultPrevented) {
-            return;
-        }
-        this.selected = !this.selected;
-        this.dispatchEvent(new InputEvent('input', { bubbles: true, composed: true }));
-        // Bubbles but does not compose to mimic native browser <input> & <select>
-        // Additionally, native change event is not an InputEvent.
-        this.dispatchEvent(new Event('change', { bubbles: true }));
-    }
 }
-(() => {
-    setupFormSubmitter(IconButton);
-})();
-/** @nocollapse */
-IconButton.formAssociated = true;
 /** @nocollapse */
 IconButton.shadowRootOptions = {
     mode: 'open',
     delegatesFocus: true,
 };
-__decorate([
-    n({ type: Boolean, reflect: true })
-], IconButton.prototype, "disabled", void 0);
 __decorate([
     n({ type: Boolean, attribute: 'soft-disabled', reflect: true })
 ], IconButton.prototype, "softDisabled", void 0);
@@ -269,12 +220,6 @@ __decorate([
 __decorate([
     n({ type: Boolean, reflect: true })
 ], IconButton.prototype, "selected", void 0);
-__decorate([
-    n()
-], IconButton.prototype, "type", void 0);
-__decorate([
-    n({ reflect: true })
-], IconButton.prototype, "value", void 0);
 __decorate([
     r()
 ], IconButton.prototype, "flipIcon", void 0);
@@ -304,7 +249,7 @@ const styles = i$2 `:host{--_disabled-icon-color: var(--md-icon-button-disabled-
  */
 /**
  * @license
- * Copyright 2025 Omicron Energy GmbH
+ * Copyright 2026 OMICRON electronics GmbH
  * SPDX-License-Identifier: Apache-2.0
  */
 /**
@@ -334,10 +279,10 @@ class OscdIconButton extends ScopedElementsMixin(IconButton) {
     }
 }
 OscdIconButton.scopedElements = {
-    'md-ripple': MdRipple,
-    'md-focus-ring': MdFocusRing,
+    'md-ripple': OscdRipple,
+    'md-focus-ring': OscdFocusRing,
 };
 OscdIconButton.styles = [styles$1, styles];
 
 export { OscdIconButton as O };
-//# sourceMappingURL=OscdIconButton-BJGPPTFx.js.map
+//# sourceMappingURL=OscdIconButton-DEFZaMOB.js.map

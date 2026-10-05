@@ -1,14 +1,7 @@
-import { _ as __decorate, n, x, i, a as i$1, S as ScopedElementsMixin } from './property-d5R0XF0B.js';
-import { d as mixinElementInternals, a as e, g as internals, b as e$1, M as MdFocusRing, f as MdRipple, i as i$2, O as OscdIcon, r } from './form-submitter-BnXEOv4K.js';
-import { V as Validator, b as mixinConstraintValidation, c as mixinFormAssociated, k as isActivationClick, g as getFormValue, l as getFormState, e as createValidator, f as getValidityAnchor, T as TextField, F as Field, s as styles$3, h as styles$4, i as OscdTextButton, O as OscdFilledButton, j as OscdDialog } from './OscdFilledButton-CBa1pbad.js';
-
-function newOpenEvent(doc, docName) {
-    return new CustomEvent('oscd-open', {
-        bubbles: true,
-        composed: true,
-        detail: { doc, docName },
-    });
-}
+import { _ as __decorate, n, b, i, a as i$1, S as ScopedElementsMixin } from './property-CoNymZGd.js';
+import { n as newOpenEvent } from './open-event-b7BUMCjR.js';
+import { d as mixinFormAssociated, f as mixinElementInternals, a as e, k as internals, b as e$1, g as getFormValue, l as getFormState, O as OscdFocusRing, h as OscdRipple, i as i$2, j as OscdIcon, r } from './form-submitter-BZoLMdvC.js';
+import { V as Validator, b as mixinConstraintValidation, j as isActivationClick, d as createValidator, g as getValidityAnchor, T as TextField, F as Field, s as styles$3, e as styles$4, h as OscdTextButton, f as OscdFilledButton, i as OscdDialog } from './OscdFilledButton-C14o39Ts.js';
 
 /**
  * @license
@@ -429,7 +422,7 @@ class Radio extends radioBaseClass {
     }
     render() {
         const classes = { 'checked': this.checked };
-        return x `
+        return b `
       <div class="container ${e$1(classes)}" aria-hidden="true">
         <md-ripple
           part="ripple"
@@ -539,7 +532,7 @@ const styles$2 = i$1 `@layer{:host{display:inline-flex;height:var(--md-radio-ico
  */
 /**
  * @license
- * Copyright 2025 Omicron Energy GmbH
+ * Copyright 2026 OMICRON electronics GmbH
  * SPDX-License-Identifier: Apache-2.0
  */
 /**
@@ -561,8 +554,8 @@ const styles$2 = i$1 `@layer{:host{display:inline-flex;height:var(--md-radio-ico
 class OscdRadio extends ScopedElementsMixin(Radio) {
 }
 OscdRadio.scopedElements = {
-    'md-ripple': MdRipple,
-    'md-focus-ring': MdFocusRing,
+    'md-ripple': OscdRipple,
+    'md-focus-ring': OscdFocusRing,
 };
 OscdRadio.styles = [styles$2];
 
@@ -600,7 +593,7 @@ class OutlinedTextField extends TextField {
  */
 class OutlinedField extends Field {
     renderOutline(floatingLabel) {
-        return x `
+        return b `
       <div class="outline">
         <div class="outline-start"></div>
         <div class="outline-notch">
@@ -645,7 +638,7 @@ OscdOutlinedField.styles = [styles$3, styles];
  */
 /**
  * @license
- * Copyright 2025 Omicron Energy GmbH
+ * Copyright 2026 OMICRON electronics GmbH
  * SPDX-License-Identifier: Apache-2.0
  */
 /**
@@ -712,7 +705,7 @@ class OscdMenuNewFile extends ScopedElementsMixin(i) {
         this.dialog.show();
     }
     render() {
-        return x `<oscd-dialog
+        return b `<oscd-dialog
       aria-label="New Project"
       @cancel=${(event) => event.preventDefault()}
       @closed=${(event) => {
@@ -755,7 +748,7 @@ class OscdMenuNewFile extends ScopedElementsMixin(i) {
         ></oscd-outlined-textfield>
         <div role="radiogroup" aria-labelledby="group-title">
           <h3 id="group-title">Specification Version</h3>
-          ${Object.entries(supportedAttributes).map(([spec, { label }]) => x ` <label>
+          ${Object.entries(supportedAttributes).map(([spec, { label }]) => b ` <label>
                 <oscd-radio
                   name="specs"
                   value=${spec}

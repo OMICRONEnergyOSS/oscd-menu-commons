@@ -1,6 +1,8 @@
 import OscdMenuNew from './oscd-menu-new.js';
+import OscdMenuOpen from './oscd-menu-open.js';
+import OscdMenuSave from './oscd-menu-save.js';
 import OscdMenuUndo from './oscd-menu-undo.js';
 import OscdMenuRedo from './oscd-menu-redo.js';
 import OscdMenuFileClose from './oscd-menu-file-close.js';
 import OscdMenuFileRename from './oscd-menu-file-rename.js';
-export { OscdMenuNew, OscdMenuUndo, OscdMenuRedo, OscdMenuFileClose, OscdMenuFileRename, };
+export { OscdMenuNew, OscdMenuOpen, OscdMenuSave, OscdMenuUndo, OscdMenuRedo, OscdMenuFileClose, OscdMenuFileRename, };

@@ -1,5 +1,5 @@
-import OscdMenuOpen from '@omicronenergy/oscd-menu-open';
-import OscdMenuSave from '@omicronenergy/oscd-menu-save';
+import OscdMenuOpen from '../dist/oscd-menu-open.js';
+import OscdMenuSave from '../dist/oscd-menu-save.js';
 import OscdBackgroundEditV1 from '@omicronenergy/oscd-background-editv1';
 
 customElements.define('oscd-menu-open', OscdMenuOpen);

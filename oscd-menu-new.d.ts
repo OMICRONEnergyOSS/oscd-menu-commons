@@ -5,7 +5,7 @@ import { OscdIcon } from '@omicronenergy/oscd-ui/icon/OscdIcon.js';
 import { OscdFilledButton } from '@omicronenergy/oscd-ui/button/OscdFilledButton.js';
 import { OscdTextButton } from '@omicronenergy/oscd-ui/button/OscdTextButton.js';
 import { OscdOutlinedTextField } from '@omicronenergy/oscd-ui/textfield/OscdOutlinedTextField.js';
-declare const OscdMenuNewFile_base: typeof LitElement & import("@open-wc/scoped-elements/lit-element.js").ScopedElementsHostConstructor;
+declare const OscdMenuNewFile_base: typeof LitElement & import("@open-wc/dedupe-mixin").Constructor<import("@open-wc/scoped-elements/types.js").ScopedElementsHost> & import("@open-wc/scoped-elements/types.js").ScopedElementsHostConstructor;
 export default class OscdMenuNewFile extends OscdMenuNewFile_base {
     static scopedElements: {
         'oscd-dialog': typeof OscdDialog;

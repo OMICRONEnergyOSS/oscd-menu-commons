@@ -1,4 +1,4 @@
-import { S as ScopedElementsMixin, i, _ as __decorate, n } from './property-d5R0XF0B.js';
+import { S as ScopedElementsMixin, _ as __decorate, n, i } from './property-CoNymZGd.js';
 
 class OscdMenuFileClose extends ScopedElementsMixin(i) {
     run() {
