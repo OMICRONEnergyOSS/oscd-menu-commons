@@ -1,6 +1,6 @@
 {
   "name": "@omicronenergy/oscd-menu-commons",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "OpenSCD Menu Plugin for working with IEC 61850 SCL files.",
   "type": "module",
   "repository": {
