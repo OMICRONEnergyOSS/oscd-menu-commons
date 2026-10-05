@@ -60,6 +60,15 @@ only overrides the main bundle's `input`, since this package bundles multiple
 entry points (one per exported custom element) rather than the single entry
 point the shared config assumes.
 
+Use the published npm package for `@omicronenergy/oscd-tooling`, not a
+`file:` dependency on a sibling checkout, so `npm ci` can install the same
+tooling in GitHub Actions.
+
+The `prepare` script runs `oscd install-hooks` during dependency installation.
+It generates `.githooks/pre-commit` and `.githooks/commit-msg` and sets
+`core.hooksPath` to `.githooks`. Keep these committed hooks; they replace Husky
+and run the shared staged-file linting and commit-message checks.
+
 ## Local Demo with `web-dev-server`
 
 ```bash

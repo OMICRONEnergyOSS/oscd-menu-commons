@@ -66,7 +66,7 @@
   "devDependencies": {
     "@lit/localize-tools": "^0.8.0",
     "@omicronenergy/oscd-test-utils": "^0.0.8",
-    "@omicronenergy/oscd-tooling": "file:../oscd-tooling",
+    "@omicronenergy/oscd-tooling": "^0.0.6",
     "@open-wc/testing": "^4.0.0",
     "@types/mocha": "^10.0.10",
     "@types/wicg-file-system-access": "^2023.10.7",
