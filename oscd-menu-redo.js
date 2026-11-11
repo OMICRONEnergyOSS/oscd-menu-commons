@@ -1,6 +1,6 @@
 import { S as ScopedElementsMixin, i, b, _ as __decorate, n } from './property-CoNymZGd.js';
-import { j as OscdIcon, r } from './form-submitter-BZoLMdvC.js';
-import { O as OscdIconButton } from './OscdIconButton-DEFZaMOB.js';
+import { j as OscdIcon, r } from './form-submitter-CQ8aKCiU.js';
+import { O as OscdIconButton } from './OscdIconButton-BE1Y5N06.js';
 
 class OscdMenuNewFile extends ScopedElementsMixin(i) {
     get canRedo() {

@@ -1,4 +1,4 @@
-import { m as mixinDelegatesAria, p as mixinFormSubmitter, d as mixinFormAssociated, f as mixinElementInternals, r, s as setupDispatchHooks, q as afterDispatch, i as i$1, b as e, u, O as OscdFocusRing, h as OscdRipple } from './form-submitter-BZoLMdvC.js';
+import { m as mixinDelegatesAria, p as mixinFormSubmitter, d as mixinFormAssociated, f as mixinElementInternals, r, s as setupDispatchHooks, q as afterDispatch, i as i$1, b as e, u, O as OscdFocusRing, h as OscdRipple } from './form-submitter-CQ8aKCiU.js';
 import { i, _ as __decorate, n, A, b, a as i$2, S as ScopedElementsMixin } from './property-CoNymZGd.js';
 
 /**
@@ -285,4 +285,4 @@ OscdIconButton.scopedElements = {
 OscdIconButton.styles = [styles$1, styles];
 
 export { OscdIconButton as O };
-//# sourceMappingURL=OscdIconButton-DEFZaMOB.js.map
+//# sourceMappingURL=OscdIconButton-BE1Y5N06.js.map
