@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.3](https://github.com/OMICRONEnergyOSS/oscd-menu-commons/compare/oscd-menu-commons-v0.0.2...oscd-menu-commons-v0.0.3) (2026-11-11)
+
+
+### Bug Fixes
+
+* update oscd-ui to get round ugly dialog issues ([2f716dc](https://github.com/OMICRONEnergyOSS/oscd-menu-commons/commit/2f716dc841811a7af479ae80ac6e8f6134d43c30))
+
 ## [0.0.2](https://github.com/OMICRONEnergyOSS/oscd-menu-commons/compare/oscd-menu-commons-v0.0.1...oscd-menu-commons-v0.0.2) (2026-10-05)
 
 
